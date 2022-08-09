@@ -8,9 +8,9 @@ const dashboard = {
     logger.info("dashboard rendering");
     const viewData = {
       title: "Dashboard",
-      stations: stationStore.getAllStations()
+      stations: stationStore.getAllStations(),
     };
-    logger.info("about to render", stationStore.getAllStations());
+    //logger.info("about to render", stationStore.getAllStations());
     response.render("dashboard", viewData);
   }
 };

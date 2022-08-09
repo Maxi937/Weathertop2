@@ -1,0 +1,43 @@
+<table class="ui fixed table">
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th class="center aligned">Code</th>
+        <th class="center aligned">Temp</th>
+        <th class="center aligned">Wind Speed</th>
+        <th class="center aligned">Wind Direction</th>
+        <th class="center aligned">Wind Pressure</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    {{#each station.readings}}
+    <tr>
+        <td>
+            date
+        </td>
+        <td class="center aligned">
+            {{code}}
+        </td>
+        <td class="center aligned">
+            {{temperature}}
+        </td>
+        <td class="center aligned">
+            {{windSpeed}}
+        </td>
+        <td class="center aligned">
+            ${reading.windDirection}
+        </td>
+        <td class="center aligned">
+            ${reading.windPressure}
+        </td>
+        <td class="center aligned">
+            <a href="/station/${_station.id}/deletereading/${reading.id}">
+                <i class="bordered grey large link trash icon"></i>
+            </a>
+        </td>
+    </tr>
+    {{/each}}
+    </tbody>
+</table>

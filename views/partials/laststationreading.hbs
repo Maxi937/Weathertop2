@@ -1,16 +1,15 @@
 
-{{#each stations}}
 <div class="ui right aligned inverted five cards">
     <div class=" card">
         <div class="ui inverted segment">
             <i class="right floated huge violet map marker alternate icon"></i>
             <h2>
-                {{title}}
+                {{this.name}}
             </h2>
 
             <p>
-                Lat: ${station.latitude.format("0.000")} <br>
-                Lng: ${station.longitude.format("0.000")}
+                Lat: {{this.lat}} <br>
+                Lng: {{this.long}}
             </p>
         </div>
     </div>
@@ -72,4 +71,3 @@
         </div>
     </div>
 </div>
-{{/each}}
