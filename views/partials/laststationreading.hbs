@@ -1,0 +1,124 @@
+#{list items:_station, as:'station'}
+
+#{if station.readings.size() == 0}
+<div class="ui right aligned inverted five cards">
+    <div class=" card">
+        <div class="ui inverted segment">
+            <i class="right floated huge violet map marker alternate icon"></i>
+            <h2>
+                ${station.name}
+            </h2>
+
+            <p>
+                Lat: ${station.latitude.format("0.000")} <br>
+                Lng: ${station.longitude.format("0.000")}
+            </p>
+        </div>
+        <div class="ui inverted segment">
+            <p>
+                Insert Station Readings
+            </p>
+        </div>
+    </div>
+
+    <div class="ui card">
+        <div class="ui center aligned fluid inverted segment">
+            <i class="huge center red cloud icon"></i>
+        </div>
+    </div>
+
+    <div class="ui card">
+        <div class="ui center aligned fluid inverted segment">
+            <i class="huge center blue thermometer icon"></i>
+        </div>
+    </div>
+
+    <div class="ui card">
+        <div class="ui center aligned fluid inverted segment">
+            <i class="huge center green wind icon"></i>
+        </div>
+    </div>
+
+    <div class="ui card">
+        <div class="ui center aligned fluid inverted segment">
+            <i class="huge center orange stroopwafel icon"></i>
+        </div>
+    </div>
+</div>
+#{/if}
+
+#{if station.readings.size() > 0}
+<div class="ui right aligned inverted five cards">
+    <div class=" card">
+        <div class="ui inverted segment">
+            <i class="right floated huge violet map marker alternate icon"></i>
+            <h2>
+                ${station.name}
+            </h2>
+
+            <p>
+                Lat: ${station.latitude.format("0.000")} <br>
+                Lng: ${station.longitude.format("0.000")}
+            </p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="ui inverted segment">
+            <i class="right floated huge red ${_anemometer.getWeatherCodeIcon(station.getLastReading())}"></i>
+            <h2>
+                Weather
+            </h2>
+            <p>
+                ${_anemometer.getWeatherCode(station.getLastReading())}
+            </p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="ui inverted segment">
+            <i class="right floated huge blue temperature low icon"></i>
+            <h2>
+                Temp
+            </h2>
+            <p>
+                <i class="right floated big blue ${station.getTrendAnalysis('Temp')}"></i>
+                ${station.getLastReading().temperature} C <br>
+                ${_thermometer.getCelsiusToFahrenheit(station.getLastReading())} F <br>
+                Max Temp: ${station.getMinMax("Temp").get("max")} C <br>
+                Min Temp: ${station.getMinMax("Temp").get("min")} C
+            </p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="ui inverted segment">
+            <i class="right floated huge green wind icon"></i>
+            <h2>
+                Wind
+            </h2>
+            <p>
+                <i class="right floated big green ${station.getTrendAnalysis('windSpeed')}"></i>
+                ${_anemometer.getBeaufortScale(station.getLastReading())} bft <br>
+                ${_compass.getCompassWindDirection(station.getLastReading())}<br>
+                Feels like <br>
+                ${_thermometer.getWindChill(station.getLastReading()).format("0.00")} <br>
+                Max: ${station.getMinMax("windSpeed").get("max")} KmHr <br>
+                Min: ${station.getMinMax("windSpeed").get("min")} KmHr
+            </p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="ui inverted segment">
+            <i class="right floated huge orange stroopwafel icon"></i>
+            <h2>
+                Pressure
+            </h2>
+            <p>
+                <i class="right floated big orange ${station.getTrendAnalysis('windPressure')}"></i>
+                ${station.getLastReading().windPressure} hpa <br>
+                Max: ${station.getMinMax("windPressure").get("max")} KmHr <br>
+                Min: ${station.getMinMax("windPressure").get("min")} KmHr
+            </p>
+        </div>
+    </div>
+</div>
+#{/if}
+#{/list}
