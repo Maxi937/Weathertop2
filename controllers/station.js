@@ -11,12 +11,12 @@ const station = {
     logger.debug("Station id = ", stationId);
 
     const station = stationStore.getStation(stationId);
-    const lastestReading = weatherAnalytics.getLastestReading(station);
-    console.log(lastestReading);
+    const latestReading = weatherAnalytics.getLatestReading(station);
+    console.log("Rendering lastReading", latestReading);
     const viewData = {
-      title: "station",
+      title: station.name + " Station",
       station: stationStore.getStation(stationId),
-      lastestReading: lastestReading
+      latestReading: latestReading
     };
     response.render("station", viewData);
   }

@@ -1,15 +1,23 @@
 "use strict";
 
+const weatherAnalyticsStore = require("../utils/weather-analytics-store.json");
+const logger = require("./logger");
+
 const weatherAnalytics = {
 
-  getLastestReading(station) {
-    let lastestReading = null;
+  getLatestReading(station) {
+    let latestReading = null;
     if (station.readings.length > 0) {
-      lastestReading = station.readings[0];
-      return lastestReading
+      latestReading = station.readings.length-1;
+      return station.readings[latestReading];
     }
     return null;
   },
+
+  getBeaufort(reading){
+    console.log (reading);
+    return reading;
+  }
 };
 
 module.exports = weatherAnalytics;

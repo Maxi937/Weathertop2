@@ -4,12 +4,12 @@
         <div class="ui inverted segment">
             <i class="right floated huge violet map marker alternate icon"></i>
             <h2>
-                {{this.name}}
+                {{name}}
             </h2>
 
             <p>
-                Lat: {{this.lat}} <br>
-                Lng: {{this.long}}
+                Lat: {{lat}} <br>
+                Lng: {{long}}
             </p>
         </div>
     </div>
@@ -32,7 +32,7 @@
             </h2>
             <p>
                 <i class="right floated big blue ${station.getTrendAnalysis('Temp')}"></i>
-                ${station.getLastReading().temperature} C <br>
+                {{latestReading.temperature}} C <br>
                 ${_thermometer.getCelsiusToFahrenheit(station.getLastReading())} F <br>
                 Max Temp: ${station.getMinMax("Temp").get("max")} C <br>
                 Min Temp: ${station.getMinMax("Temp").get("min")} C
@@ -47,7 +47,9 @@
             </h2>
             <p>
                 <i class="right floated big green ${station.getTrendAnalysis('windSpeed')}"></i>
-                ${_anemometer.getBeaufortScale(station.getLastReading())} bft <br>
+                Get Beaufort
+                bft <br>
+
                 ${_compass.getCompassWindDirection(station.getLastReading())}<br>
                 Feels like <br>
                 ${_thermometer.getWindChill(station.getLastReading()).format("0.00")} <br>
@@ -64,7 +66,7 @@
             </h2>
             <p>
                 <i class="right floated big orange ${station.getTrendAnalysis('windPressure')}"></i>
-                ${station.getLastReading().windPressure} hpa <br>
+                {{latestReading.pressure}} hpa <br>
                 Max: ${station.getMinMax("windPressure").get("max")} KmHr <br>
                 Min: ${station.getMinMax("windPressure").get("min")} KmHr
             </p>
