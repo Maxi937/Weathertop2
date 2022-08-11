@@ -32,8 +32,9 @@
             </h2>
             <p>
                 <i class="right floated big blue ${station.getTrendAnalysis('Temp')}"></i>
-                {{latestReading.temperature}} C <br>
-                ${_thermometer.getCelsiusToFahrenheit(station.getLastReading())} F <br>
+                {{weatherReport.latestReading.temperature}} C <br>
+                {{weatherReport.farenheit}} F <br>
+                
                 Max Temp: ${station.getMinMax("Temp").get("max")} C <br>
                 Min Temp: ${station.getMinMax("Temp").get("min")} C
             </p>
@@ -47,8 +48,7 @@
             </h2>
             <p>
                 <i class="right floated big green ${station.getTrendAnalysis('windSpeed')}"></i>
-                Get Beaufort
-                bft <br>
+                {{weatherReport.beaufort}} bft <br>
 
                 ${_compass.getCompassWindDirection(station.getLastReading())}<br>
                 Feels like <br>

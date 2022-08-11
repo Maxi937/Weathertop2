@@ -10,14 +10,21 @@ const station = {
     const stationId = request.params.id;
     logger.debug("Station id = ", stationId);
 
-    const station = stationStore.getStation(stationId);
+    const station = stationStore.getStation(stationId); 
     const latestReading = weatherAnalytics.getLatestReading(station);
+
     console.log("Rendering lastReading", latestReading);
     const viewData = {
       title: station.name + " Station",
       station: stationStore.getStation(stationId),
-      latestReading: latestReading
+      weatherReport: {
+        latestReading: latestReading,
+        beaufort: weatherAnalytics.getBeaufort(latestReading.windSpeed),
+        farenheit: weatherAnalytics.getTempAsFaren(latestReading.temperature),
+      }
+      
     };
+    console.log(viewData.weatherReport.farenheit)
     response.render("station", viewData);
   }
 };

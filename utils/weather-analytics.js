@@ -1,5 +1,6 @@
 "use strict";
 
+const { forEach } = require("lodash");
 const weatherAnalyticsStore = require("../utils/weather-analytics-store.json");
 const logger = require("./logger");
 
@@ -14,9 +15,20 @@ const weatherAnalytics = {
     return null;
   },
 
-  getBeaufort(reading){
-    console.log (reading);
-    return reading;
+
+  getBeaufort(windSpeed){
+    for (let i = 0; i < weatherAnalyticsStore.beaufortScale.length; i++){
+      let scale = weatherAnalyticsStore.beaufortScale[i];
+      console.log(scale)
+        if (windSpeed >= scale.min && windSpeed <= scale.max){
+          return scale.beaufort;
+        }
+      return null;
+    }
+  },
+
+  getTempAsFaren(temperature){
+    return temperature * 9 / 5 + 32;
   }
 };
 

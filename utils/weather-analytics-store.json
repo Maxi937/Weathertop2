@@ -2,23 +2,57 @@
   "beaufortScale": [
     {
       "beaufort": "0",
-      "measurements": [
-        {
-          "label": "Calm",
-          "min": "1",
-          "max": "1"
-        }
-      ]
+      "label": "Calm",
+      "min": "1",
+      "max": "1"
     },
     {
       "beaufort": "1",
-      "measurements": [
-        {
-          "label": "Light Air",
-          "min": "1",
-          "max": "5"
-        }
-      ]
+      "label": "Light Air",
+      "min": "1",
+      "max": "5"
+    }
+  ],
+  "weatherCodes": [
+    {
+      "code": "100",
+      "weather": "Clear",
+      "icon": "red sun icon"
+    },
+    {
+      "code": "200",
+      "weather": "Partial Clouds",
+      "icon": "red cloud sun icon"
+    },
+    {
+      "code": "300",
+      "weather": "Cloudy",
+      "icon": "red cloud icon"
+    },
+    {
+      "code": "400",
+      "weather": "Light Showers",
+      "icon": "cloud sun rain icon"
+    },
+    {
+      "code": "500",
+      "weather": "Heavy Showers",
+      "icon": "cloud showers heavy icon"
+    },
+    {
+      "code": "600",
+      "weather": "Rain",
+      "icon": "cloud rain icon"
+    },
+    {
+      "code": "700",
+      "weather": "Snow",
+      "icon": "snowflake icon"
+    },
+    {
+      "code": "800",
+      "weather": "Thunder",
+      "icon": "bolt icon"
     }
   ]
 }
