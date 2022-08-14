@@ -24,6 +24,10 @@ app.set("view engine", ".hbs");
 const routes = require("./routes");
 app.use("/", routes);
 
+//Let app see Public Folder so Images can be served
+app.use(express.static("./public/"));
+
+
 const listener = app.listen(process.env.PORT || 4000, function() {
-  logger.info(`glitch-template-1 started on port ${listener.address().port}`);
+  logger.info(`WeatherTop2 started on port ${listener.address().port}`);
 });
