@@ -24,7 +24,7 @@ const station = {
       }
       
     };
-    console.log(viewData.weatherReport.farenheit)
+    console.log(viewData.weatherReport.beaufort)
     response.render("station", viewData);
   }
 };

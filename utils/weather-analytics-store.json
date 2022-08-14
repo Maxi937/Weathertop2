@@ -1,56 +1,117 @@
 {
   "beaufortScale": [
     {
-      "beaufort": "0",
+      "beaufort": 0,
       "label": "Calm",
-      "min": "1",
-      "max": "1"
+      "min": 1,
+      "max": 1
     },
     {
-      "beaufort": "1",
+      "beaufort": 1,
       "label": "Light Air",
-      "min": "1",
-      "max": "5"
+      "min": 1,
+      "max": 5
+    },
+    {
+      "beaufort": 2,
+      "label": "Light Breeze",
+      "min": 6,
+      "max": 11
+    },
+    {
+      "beaufort": 3,
+      "label": "Gentle Breeze",
+      "min": 12,
+      "max": 19
+    },
+    {
+      "beaufort": 4,
+      "label": "Moderate Breeze",
+      "min": 20,
+      "max": 28
+    },
+    {
+      "beaufort": 5,
+      "label": "Fresh Breeze",
+      "min": 29,
+      "max": 38
+    },
+    {
+      "beaufort": 6,
+      "label": "Strong Breeze",
+      "min": 39,
+      "max": 49
+    },
+    {
+      "beaufort": 7,
+      "label": "Near Gale",
+      "min": 50,
+      "max": 61
+    },
+    {
+      "beaufort": 8,
+      "label": "Gale",
+      "min": 62,
+      "max": 74
+    },
+    {
+      "beaufort": 9,
+      "label": "Severe Gale",
+      "min": 75,
+      "max": 88
+    },
+    {
+      "beaufort": 10,
+      "label": "Strong Storm",
+      "min": 89,
+      "max": 102
+    },
+    {
+      "beaufort": 11,
+      "label": "Violent Storm",
+      "min": 103,
+      "max": 117
     }
   ],
+
   "weatherCodes": [
     {
-      "code": "100",
+      "code": 100,
       "weather": "Clear",
       "icon": "red sun icon"
     },
     {
-      "code": "200",
+      "code": 200,
       "weather": "Partial Clouds",
       "icon": "red cloud sun icon"
     },
     {
-      "code": "300",
+      "code": 300,
       "weather": "Cloudy",
       "icon": "red cloud icon"
     },
     {
-      "code": "400",
+      "code": 400,
       "weather": "Light Showers",
       "icon": "cloud sun rain icon"
     },
     {
-      "code": "500",
+      "code": 500,
       "weather": "Heavy Showers",
       "icon": "cloud showers heavy icon"
     },
     {
-      "code": "600",
+      "code": 600,
       "weather": "Rain",
       "icon": "cloud rain icon"
     },
     {
-      "code": "700",
+      "code": 700,
       "weather": "Snow",
       "icon": "snowflake icon"
     },
     {
-      "code": "800",
+      "code": 800,
       "weather": "Thunder",
       "icon": "bolt icon"
     }

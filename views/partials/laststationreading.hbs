@@ -4,13 +4,8 @@
         <div class="ui inverted segment">
             <i class="right floated huge violet map marker alternate icon"></i>
             <h2>
-                {{name}}
+                {{station.name}}
             </h2>
-
-            <p>
-                Lat: {{lat}} <br>
-                Lng: {{long}}
-            </p>
         </div>
     </div>
     <div class="card">
@@ -19,9 +14,6 @@
             <h2>
                 Weather
             </h2>
-            <p>
-                ${_anemometer.getWeatherCode(station.getLastReading())}
-            </p>
         </div>
     </div>
     <div class="card">
@@ -34,9 +26,6 @@
                 <i class="right floated big blue ${station.getTrendAnalysis('Temp')}"></i>
                 {{weatherReport.latestReading.temperature}} C <br>
                 {{weatherReport.farenheit}} F <br>
-                
-                Max Temp: ${station.getMinMax("Temp").get("max")} C <br>
-                Min Temp: ${station.getMinMax("Temp").get("min")} C
             </p>
         </div>
     </div>
@@ -49,12 +38,6 @@
             <p>
                 <i class="right floated big green ${station.getTrendAnalysis('windSpeed')}"></i>
                 {{weatherReport.beaufort}} bft <br>
-
-                ${_compass.getCompassWindDirection(station.getLastReading())}<br>
-                Feels like <br>
-                ${_thermometer.getWindChill(station.getLastReading()).format("0.00")} <br>
-                Max: ${station.getMinMax("windSpeed").get("max")} KmHr <br>
-                Min: ${station.getMinMax("windSpeed").get("min")} KmHr
             </p>
         </div>
     </div>
@@ -66,9 +49,7 @@
             </h2>
             <p>
                 <i class="right floated big orange ${station.getTrendAnalysis('windPressure')}"></i>
-                {{latestReading.pressure}} hpa <br>
-                Max: ${station.getMinMax("windPressure").get("max")} KmHr <br>
-                Min: ${station.getMinMax("windPressure").get("min")} KmHr
+                {{weatherReport.latestReading.pressure}} hpa <br>
             </p>
         </div>
     </div>

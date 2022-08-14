@@ -15,16 +15,16 @@ const weatherAnalytics = {
     return null;
   },
 
-
   getBeaufort(windSpeed){
     for (let i = 0; i < weatherAnalyticsStore.beaufortScale.length; i++){
       let scale = weatherAnalyticsStore.beaufortScale[i];
-      console.log(scale)
+      
         if (windSpeed >= scale.min && windSpeed <= scale.max){
+          console.log(scale)
           return scale.beaufort;
         }
-      return null;
     }
+    return null;
   },
 
   getTempAsFaren(temperature){
