@@ -11,7 +11,7 @@ const station = {
     //logger.debug("Station id = ", stationId);
 
     const station = stationStore.getStation(stationId);
-    const latestReading = weatherAnalytics.getLatestReading(station);
+    const latestReading = stationStore.getLatestReading(station);
 
     //console.log("Rendering lastReading", latestReading);
     const viewData = {
@@ -25,7 +25,7 @@ const station = {
       },
     };
 
-    console.log(viewData.weatherReport);
+    //console.log(viewData.weatherReport);
     response.render("station", viewData);
   },
 };

@@ -1,0 +1,59 @@
+
+<div class="ui right aligned inverted five cards">
+    <div class=" card">
+        <div class="ui inverted segment">
+            <i class="right floated huge violet map marker alternate icon"></i>
+            <h2>
+                {{name}}
+            </h2>
+        </div>
+    </div>
+    <div class="card">
+        <div class="ui inverted segment">
+            <i class="right floated huge red ${_anemometer.getWeatherCodeIcon(station.getLastReading())}"></i>
+            <h2>
+                Weather
+            </h2>
+             <p>
+                {{weatherReports}}
+            </p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="ui inverted segment">
+            <i class="right floated huge blue temperature low icon"></i>
+            <h2>
+                Temp
+            </h2>
+            <p>
+                <i class="right floated big blue ${station.getTrendAnalysis('Temp')}"></i>
+                {{!weatherReport.latestReading.temperature}} C <br>
+                {{!weatherReport.farenheit}} F <br>
+            </p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="ui inverted segment">
+            <i class="right floated huge green wind icon"></i>
+            <h2>
+                Wind
+            </h2>
+            <p>
+                <i class="right floated big green ${station.getTrendAnalysis('windSpeed')}"></i>
+                {{!weatherReport.beaufort}} bft <br>
+            </p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="ui inverted segment">
+            <i class="right floated huge orange stroopwafel icon"></i>
+            <h2>
+                Pressure
+            </h2>
+            <p>
+                <i class="right floated big orange ${station.getTrendAnalysis('windPressure')}"></i>
+                {{!weatherReport.latestReading.pressure}} hpa <br>
+            </p>
+        </div>
+    </div>
+</div>

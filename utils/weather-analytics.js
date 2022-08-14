@@ -1,19 +1,11 @@
 "use strict";
 
-const { forEach } = require("lodash");
+
 const weatherAnalyticsStore = require("../utils/weather-analytics-store.json");
 const logger = require("./logger");
 
 const weatherAnalytics = {
-  getLatestReading(station) {
-    let latestReading = null;
 
-    if (station.readings.length > 0) {
-      latestReading = station.readings.length - 1;
-      return station.readings[latestReading];
-    }
-    return null;
-  },
 
   getWeather(code) {
     for (let i = 0; i < weatherAnalyticsStore.weatherCodes.length; i++) {
@@ -39,6 +31,28 @@ const weatherAnalytics = {
   getTempAsFaren(temperature) {
     return (temperature * 9) / 5 + 32;
   },
+
+  generateWeatherReport(reading){
+    const weatherReport = {
+      reading: reading,
+      weather: this.getWeather(reading.code),
+      beaufort: this.getBeaufort(reading.windSpeed),
+      Farenheit: this.getTempAsFaren(reading.temperature)
+    };
+    return weatherReport;
+  },
+
+  //Generates a Weather report for each reading from an array of readings
+  generateMultiWeatherReports(readings){
+    const weatherReportList = [];
+
+    for (let i = 0; i < readings.length; i++){
+      let weatherReport = this.generateWeatherReport(readings[i])
+      weatherReportList.push(weatherReport);
+    };
+    return weatherReportList;
+  },
+
 };
 
 module.exports = weatherAnalytics;
