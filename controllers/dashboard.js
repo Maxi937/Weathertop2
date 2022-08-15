@@ -15,11 +15,10 @@ const dashboard = {
     const viewData = {
       title: "Dashboard",
       stations: stations,
-      weatherReports: weatherReports
+      weatherReports: weatherReports,
     };
 
-    //logger.info("about to render", stationStore.getAllStations());
-    console.log("Reports", weatherReports)
+    //console.log("StationList", viewData.stationList)
     response.render("dashboard", viewData);
   },
 

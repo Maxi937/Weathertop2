@@ -1,19 +1,25 @@
 "use strict";
 
 const _ = require("lodash");
+const JsonStore = require("./json-store");
 
 const stationStore = {
-  stationCollection: require("./station-store.json").stationCollection,
+
+  store: new JsonStore("./models/station-store.json", {
+    stationCollection: []
+  }),
+  collection: "stationCollection",
 
   getAllStations() {
-    return this.stationCollection;
+    return this.store.findAll(this.collection);
   },
 
+  //TODO: FIX THIS
   getAllLatestStationReadings(){
     const readingList = [];
 
-    for (let i = 0; i < this.stationCollection.length; i++){
-      let latestReading = this.getLatestStationReading(this.stationCollection[i])
+    for (let i = 0; i < this.collection.length; i++){
+      let latestReading = this.getLatestStationReading(this.collection.id[i])
       readingList.push(latestReading);
     }
     return readingList;
@@ -21,10 +27,11 @@ const stationStore = {
 
 
   getStation(id) {
-    return _.find(this.stationCollection, { id: id});
+    return this.store.findOneBy(this.collection, { id: id });
   },
 
-  getLatestStationReading(station){
+  getLatestStationReading(id){
+    let station = this.store.findOneBy(this.collection, { id: id });
     let latestReading = null;
 
     if (station.readings.length > 0) {

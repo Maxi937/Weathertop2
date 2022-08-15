@@ -15,7 +15,7 @@
                 Weather
             </h2>
              <p>
-                {{weatherReport.code}}
+                {{weatherReport.weather}}
             </p>
         </div>
     </div>
@@ -27,7 +27,7 @@
             </h2>
             <p>
                 <i class="right floated big blue ${station.getTrendAnalysis('Temp')}"></i>
-                {{weatherReport.latestReading.temperature}} C <br>
+                {{weatherReport.temperature}} C <br>
                 {{weatherReport.farenheit}} F <br>
             </p>
         </div>
@@ -52,7 +52,7 @@
             </h2>
             <p>
                 <i class="right floated big orange ${station.getTrendAnalysis('windPressure')}"></i>
-                {{weatherReport.latestReading.pressure}} hpa <br>
+                {{weatherReport.pressure}} hpa <br>
             </p>
         </div>
     </div>

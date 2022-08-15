@@ -34,10 +34,13 @@ const weatherAnalytics = {
 
   generateWeatherReport(reading){
     const weatherReport = {
-      reading: reading,
+      readingId: reading.id,
+      temperature: reading.temperature,
+      pressure: reading.pressure,
+      windSpeed: reading.windSpeed,
+      farenheit: this.getTempAsFaren(reading.temperature),
       weather: this.getWeather(reading.code),
       beaufort: this.getBeaufort(reading.windSpeed),
-      Farenheit: this.getTempAsFaren(reading.temperature)
     };
     return weatherReport;
   },
