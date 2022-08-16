@@ -14,12 +14,12 @@ const stationStore = {
     return this.store.findAll(this.collection);
   },
 
-  //TODO: FIX THIS
-  getAllLatestStationReadings(){
+
+  getAllLatestStationReadings(stationCollection){
     const readingList = [];
 
-    for (let i = 0; i < this.collection.length; i++){
-      let latestReading = this.getLatestStationReading(this.collection.id[i])
+    for (let i = 0; i < stationCollection.length; i++){
+      let latestReading = this.getLatestStationReading(stationCollection[i].id)
       readingList.push(latestReading);
     }
     return readingList;

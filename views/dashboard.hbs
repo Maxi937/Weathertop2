@@ -4,9 +4,12 @@
 
 <section class="ui segment">  
          
+{{weatherReports.1.weather}}
+
     {{#each stations}}
+        
         <section class="ui vertical segment">
-            {{> latest-dashboard-readings}}
+            {{> latest-dashboard-readings weatherReports = ../weatherReports}}
         </section>
 
         {{! UI Buttons }}

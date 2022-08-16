@@ -62,6 +62,7 @@ class JsonStore {
       .filter(filter)
       .value();
   }
+
 }
 
 module.exports = JsonStore;

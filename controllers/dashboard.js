@@ -10,7 +10,7 @@ const dashboard = {
     logger.info("dashboard rendering");
 
     const stations = stationStore.getAllStations();
-    const weatherReports = weatherAnalytics.generateMultiWeatherReports(stationStore.getAllLatestStationReadings());
+    const weatherReports = weatherAnalytics.generateMultiWeatherReports(stationStore.getAllLatestStationReadings(stations));
 
     const viewData = {
       title: "Dashboard",
@@ -18,7 +18,7 @@ const dashboard = {
       weatherReports: weatherReports,
     };
 
-    //console.log("StationList", viewData.stationList)
+    console.log("Reports", weatherReports)
     response.render("dashboard", viewData);
   },
 

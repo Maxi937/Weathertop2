@@ -1,4 +1,5 @@
 
+
 <div class="ui right aligned inverted five cards">
     <div class=" card">
         <div class="ui inverted segment">
@@ -15,7 +16,9 @@
                 Weather
             </h2>
              <p>
-                {{!}}
+                {{index}}
+                 {{weatherReports.(lookup ../stations @index).pressure}}
+
             </p>
         </div>
     </div>
@@ -57,3 +60,4 @@
         </div>
     </div>
 </div>
+
