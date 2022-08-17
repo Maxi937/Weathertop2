@@ -1,6 +1,3 @@
-
-
-
 <div class="ui right aligned inverted five cards">
     <div class=" card">
         <div class="ui inverted segment">
@@ -11,7 +8,10 @@
         </div>
     </div>
 
-    {{#with (lookup weatherReports @index)}}
+    {{! this #with uses the current index of the station loop we are in to look up the corresponding element of the weatherReport array, 
+    ie. when index is 0, we get weatherReports[0] }}
+{{#with (lookup weatherReports @index)}}
+
     <div class="card">
         <div class="ui inverted segment">
             <i class="right floated huge red ${_anemometer.getWeatherCodeIcon(station.getLastReading())}"></i>
