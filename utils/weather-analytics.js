@@ -10,7 +10,7 @@ const weatherAnalytics = {
   getWeather(code) {
     for (let i = 0; i < weatherAnalyticsStore.weatherCodes.length; i++) {
       let codeStore = weatherAnalyticsStore.weatherCodes[i];
-      if (code === codeStore.code) {
+      if (code == codeStore.code) {
         return codeStore.weather;
       }
     }

@@ -24,6 +24,21 @@ const station = {
     //console.log(viewData.weatherReport);
     response.render("station", viewData);
   },
+
+  addReading(request, response){
+    const stationId = request.params.id;
+    const station = stationStore.getStation(stationId);
+    const newReading = {
+      id: uuid.v1(),
+      code: request.body.code,
+      temperature: request.body.temperature,
+      windSpeed: request.body.windSpeed,
+      pressure: request.body.pressure
+    }
+    console.log("new Song: ", newReading);
+    stationStore.addReading(stationId, newReading);
+    response.redirect("/station/" + stationId)
+  }
 };
 
 module.exports = station;
