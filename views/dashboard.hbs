@@ -3,11 +3,8 @@
 
 
 <section class="ui segment">  
-         
-{{weatherReports.1.weather}}
-
-    {{#each stations}}
         
+    {{#each stations}}
         <section class="ui vertical segment">
             {{> latest-dashboard-readings weatherReports = ../weatherReports}}
         </section>

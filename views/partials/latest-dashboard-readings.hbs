@@ -1,5 +1,6 @@
 
 
+
 <div class="ui right aligned inverted five cards">
     <div class=" card">
         <div class="ui inverted segment">
@@ -9,6 +10,8 @@
             </h2>
         </div>
     </div>
+
+    {{#with (lookup weatherReports @index)}}
     <div class="card">
         <div class="ui inverted segment">
             <i class="right floated huge red ${_anemometer.getWeatherCodeIcon(station.getLastReading())}"></i>
@@ -16,9 +19,7 @@
                 Weather
             </h2>
              <p>
-                {{index}}
-                 {{weatherReports.(lookup ../stations @index).pressure}}
-
+                {{weather}}
             </p>
         </div>
     </div>
@@ -30,8 +31,8 @@
             </h2>
             <p>
                 <i class="right floated big blue ${station.getTrendAnalysis('Temp')}"></i>
-                {{!weatherReport.latestReading.temperature}} C <br>
-                {{!weatherReport.farenheit}} F <br>
+                {{temperature}} C <br>
+                {{farenheit}} F <br>
             </p>
         </div>
     </div>
@@ -43,7 +44,7 @@
             </h2>
             <p>
                 <i class="right floated big green ${station.getTrendAnalysis('windSpeed')}"></i>
-                {{!weatherReport.beaufort}} bft <br>
+                {{beaufort}} bft <br>
             </p>
         </div>
     </div>
@@ -55,9 +56,11 @@
             </h2>
             <p>
                 <i class="right floated big orange ${station.getTrendAnalysis('windPressure')}"></i>
-                {{!weatherReport.latestReading.pressure}} hpa <br>
+                {{pressure}} hpa <br>
             </p>
         </div>
     </div>
 </div>
+
+{{/with}}
 
