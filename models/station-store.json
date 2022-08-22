@@ -45,13 +45,6 @@
           "temperature": "10",
           "windSpeed": "3.5",
           "pressure": "8"
-        },
-        {
-          "id": "d7c0fe00-1e5b-11ed-9095-3997f32d8e9b",
-          "code": "400",
-          "temperature": "7.5",
-          "windSpeed": "90",
-          "pressure": "8"
         }
       ]
     },

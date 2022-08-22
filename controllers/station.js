@@ -38,7 +38,16 @@ const station = {
     console.log("new Song: ", newReading);
     stationStore.addReading(stationId, newReading);
     response.redirect("/station/" + stationId)
+  },
+
+  deleteReading(request, response) {
+    const stationId = request.params.id;
+    const readingId = request.params.readingId;
+    logger.debug(`Deleting Song ${readingId} from Playlist ${stationId}`);
+    stationStore.removeReading(stationId, readingId);
+    response.redirect("/station/" + stationId);
   }
+
 };
 
 module.exports = station;

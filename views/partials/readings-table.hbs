@@ -38,9 +38,11 @@
             {{pressure}}
         </td>
         <td class="center aligned">
-            <a href="/station/${_station.id}/deletereading/${reading.id}">
+            <a href="/station/{{../station.id}}/deletereading/{{id}}">
                 <i class="bordered grey large link trash icon"></i>
             </a>
+                            {{../station.id}}
+                {{id}}
         </td>
     </tr>
     {{/each}}

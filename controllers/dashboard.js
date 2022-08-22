@@ -22,6 +22,19 @@ const dashboard = {
     response.render("dashboard", viewData);
   },
 
+  //addStation(request, response) {
+  //  const loggedInUser = accounts.getCurrentUser(request);
+  //  const newPlayList = {
+  //  id: uuid.v1(),
+  //  userid: loggedInUser.id,
+  //  title: request.body.title,
+  //    songs: []
+  //  };
+  //  logger.debug("Creating a new Playlist", newPlayList);
+  //  playlistStore.addPlaylist(newPlayList);
+  //  response.redirect("/dashboard");
+  //}
+
 };
 
 module.exports = dashboard;
