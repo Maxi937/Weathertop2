@@ -4,9 +4,8 @@ const _ = require("lodash");
 const JsonStore = require("./json-store");
 
 const stationStore = {
-
   store: new JsonStore("./models/station-store.json", {
-    stationCollection: []
+    stationCollection: [],
   }),
   collection: "stationCollection",
 
@@ -14,12 +13,11 @@ const stationStore = {
     return this.store.findAll(this.collection);
   },
 
-
-  getAllLatestStationReadings(stationCollection){
+  getAllLatestStationReadings(stationCollection) {
     const readingList = [];
 
-    for (let i = 0; i < stationCollection.length; i++){
-      let latestReading = this.getLatestStationReading(stationCollection[i].id)
+    for (let i = 0; i < stationCollection.length; i++) {
+      let latestReading = this.getLatestStationReading(stationCollection[i].id);
       readingList.push(latestReading);
     }
     return readingList;
@@ -29,7 +27,7 @@ const stationStore = {
     return this.store.findOneBy(this.collection, { id: id });
   },
 
-  getLatestStationReading(id){
+  getLatestStationReading(id) {
     let station = this.store.findOneBy(this.collection, { id: id });
     let latestReading = null;
 
@@ -63,13 +61,12 @@ const stationStore = {
     this.store.save();
   },
 
-  addReading(id, reading){
+  addReading(id, reading) {
     const station = this.getStation(id);
     station.readings.push(reading);
 
     this.store.save();
   },
-
 };
 
 module.exports = stationStore;

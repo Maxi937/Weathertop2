@@ -8,14 +8,21 @@ const about = require("./controllers/about.js");
 const station = require("./controllers/station.js");
 const stationStore = require("./models/station-store.js");
 
+//Index
 router.get("/", dashboard.index);
-router.get("/dashboard", dashboard.index);
-router.get("/about", about.index);
-router.get("/station/:id", station.index);
 
-router.post("/station/:id/addreading", station.addReading);
-//router.post("/dashboard/addstation", dashboard.addStation);
+//About
+router.get("/about", about.index);
+
+//Station
+router.get("/station/:id", station.index);
 router.get("/station/:id/deletereading/:readingId", station.deleteReading);
+router.post("/station/:id/addreading", station.addReading);
+
+//Dashboard
+router.get("/dashboard", dashboard.index);
+//router.post("/dashboard/addstation", dashboard.addStation);
+
 
 
 module.exports = router;

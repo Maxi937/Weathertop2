@@ -11,10 +11,10 @@ const reading = {
     const viewData = {
       title: "Edit Reading",
       station: stationStore.getStation(stationId),
-      reading: stationStore.getReading(playlistId, songId)
+      reading: stationStore.getReading(playlistId, songId),
     };
     response.render("reading", viewData);
-  }
-}
+  },
+};
 
 module.exports = reading;

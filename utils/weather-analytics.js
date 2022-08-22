@@ -1,12 +1,9 @@
 "use strict";
 
-
 const weatherAnalyticsStore = require("../utils/weather-analytics-store.json");
 const logger = require("./logger");
 
 const weatherAnalytics = {
-
-
   getWeather(code) {
     for (let i = 0; i < weatherAnalyticsStore.weatherCodes.length; i++) {
       let codeStore = weatherAnalyticsStore.weatherCodes[i];
@@ -32,7 +29,7 @@ const weatherAnalytics = {
     return (temperature * 9) / 5 + 32;
   },
 
-  generateWeatherReport(reading){
+  generateWeatherReport(reading) {
     const weatherReport = {
       readingId: reading.id,
       temperature: reading.temperature,
@@ -45,17 +42,16 @@ const weatherAnalytics = {
     return weatherReport;
   },
 
-  //Generates a Weather report for each reading from an array of readings
-  generateMultiWeatherReports(readings){
+  //Generates a Weather report for each reading from an array of readings **overload WeatherReport Instead?
+  generateMultiWeatherReports(readings) {
     const weatherReportList = [];
 
-    for (let i = 0; i < readings.length; i++){
-      let weatherReport = this.generateWeatherReport(readings[i])
+    for (let i = 0; i < readings.length; i++) {
+      let weatherReport = this.generateWeatherReport(readings[i]);
       weatherReportList.push(weatherReport);
-    };
+    }
     return weatherReportList;
   },
-
 };
 
 module.exports = weatherAnalytics;

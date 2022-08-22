@@ -4,13 +4,14 @@ const logger = require("../utils/logger");
 const stationStore = require("../models/station-store");
 const weatherAnalytics = require("../utils/weather-analytics");
 
-
 const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
 
     const stations = stationStore.getAllStations();
-    const weatherReports = weatherAnalytics.generateMultiWeatherReports(stationStore.getAllLatestStationReadings(stations));
+    const weatherReports = weatherAnalytics.generateMultiWeatherReports(
+      stationStore.getAllLatestStationReadings(stations)
+    );
 
     const viewData = {
       title: "Dashboard",
@@ -18,7 +19,7 @@ const dashboard = {
       weatherReports: weatherReports,
     };
 
-    console.log("Reports", weatherReports)
+    console.log("Reports", weatherReports);
     response.render("dashboard", viewData);
   },
 
@@ -34,7 +35,6 @@ const dashboard = {
   //  playlistStore.addPlaylist(newPlayList);
   //  response.redirect("/dashboard");
   //}
-
 };
 
 module.exports = dashboard;
