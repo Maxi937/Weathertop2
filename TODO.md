@@ -1,6 +1,5 @@
 # TODO
 
-- Add Stations
-- Delete Readings
-- Delete Stations
-- Release Baseline
+- Release 1 features:
+  - wind chill
+  - wind direction
