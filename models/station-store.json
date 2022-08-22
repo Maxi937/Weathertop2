@@ -46,6 +46,11 @@
           "pressure": 1000
         }
       ]
+    },
+    {
+      "id": "ac4300f0-224a-11ed-a756-53c1e193f365",
+      "name": "Wexford",
+      "readings": []
     }
   ]
 }

@@ -2,17 +2,24 @@
 
 <section class="ui segment">  
     {{#each stations}}
-        <section class="ui vertical segment">
-            {{> latest-dashboard-readings weatherReports = ../weatherReports}}
-        </section>
-
+            <section class="ui vertical segment">
+                {{#if readings}}
+                    {{> latest-dashboard-readings weatherReports = ../weatherReports}}
+                {{else}}
+                    {{> empty-latest-reading-panel}}
+                {{/if}}
+            </section>
+       
         {{! UI Buttons }}
         <section class="ui vertical segment">
         <a href="/station/{{id}}">
             <i class="bordered grey large link folder icon"></i>
         </a>
+         <a href="/dashboard/deletestation/{{id}}">
+            <i class="bordered grey large link trash icon"></i>
+        </a>
     {{/each}}
 </section>
 <section>
-    {{!> add-station}}
+    {{> add-station}}
 </section>

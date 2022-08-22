@@ -44,7 +44,7 @@ const stationStore = {
   },
 
   removeStation(id) {
-    const station = this.getPlaylist(id);
+    const station = this.getStation(id);
     this.store.remove(this.collection, station);
     this.store.save();
   },

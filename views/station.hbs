@@ -2,11 +2,17 @@
 
 <section class="ui segment">
     <section class="ui vertical segment">
-        {{> latest-station-reading}}
+        {{#if readings}}
+            {{> latest-station-reading}}
+        {{else}}
+            {{> empty-latest-reading-panel}}
+        {{/if}}
     </section>
 
     <section class="ui vertical segment">
-        {{> readings-table}}
+        {{#if readings}}
+            {{> readings-table}}
+        {{/if}}
     </section>
 
      <section class="ui vertical segment">

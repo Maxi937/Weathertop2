@@ -30,15 +30,19 @@ const weatherAnalytics = {
   },
 
   generateWeatherReport(reading) {
+    if (reading == null){
+      return null
+    }
+    
     const weatherReport = {
-      readingId: reading.id,
-      temperature: reading.temperature,
-      pressure: reading.pressure,
-      windSpeed: reading.windSpeed,
-      farenheit: this.getTempAsFaren(reading.temperature),
-      weather: this.getWeather(reading.code),
-      beaufort: this.getBeaufort(reading.windSpeed),
-    };
+          readingId: reading.id,
+          temperature: reading.temperature,
+          pressure: reading.pressure,
+          windSpeed: reading.windSpeed,
+          farenheit: this.getTempAsFaren(reading.temperature),
+          weather: this.getWeather(reading.code),
+          beaufort: this.getBeaufort(reading.windSpeed),
+    } 
     return weatherReport;
   },
 

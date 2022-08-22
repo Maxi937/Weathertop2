@@ -21,7 +21,9 @@ router.post("/station/:id/addreading", station.addReading);
 
 //Dashboard
 router.get("/dashboard", dashboard.index);
-//router.post("/dashboard/addstation", dashboard.addStation);
+router.get("/dashboard/deletestation/:id", dashboard.deleteStation);
+router.post("/dashboard/addstation", dashboard.addStation);
+
 
 
 

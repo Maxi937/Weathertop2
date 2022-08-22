@@ -1,6 +1,7 @@
 "use strict";
 
 const logger = require("../utils/logger");
+const uuid = require("uuid");
 const stationStore = require("../models/station-store");
 const weatherAnalytics = require("../utils/weather-analytics");
 
@@ -23,18 +24,21 @@ const dashboard = {
     response.render("dashboard", viewData);
   },
 
-  //addStation(request, response) {
-  //  const loggedInUser = accounts.getCurrentUser(request);
-  //  const newPlayList = {
-  //  id: uuid.v1(),
-  //  userid: loggedInUser.id,
-  //  title: request.body.title,
-  //    songs: []
-  //  };
-  //  logger.debug("Creating a new Playlist", newPlayList);
-  //  playlistStore.addPlaylist(newPlayList);
-  //  response.redirect("/dashboard");
-  //}
+  addStation(request, response) {
+    const newStation = {
+    id: uuid.v1(),
+    name: request.body.name,
+      readings: []
+    };
+    stationStore.addStation(newStation);
+    response.redirect("/dashboard");
+  },
+
+  deleteStation(request, response) {
+    const stationId = request.params.id;
+    stationStore.removeStation(stationId);
+    response.redirect("/dashboard");
+  }
 };
 
 module.exports = dashboard;
