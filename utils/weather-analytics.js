@@ -14,6 +14,7 @@ const weatherAnalytics = {
     return null;
   },
 
+  //Refactor to be like getWindDirection
   getBeaufort(windSpeed) {
     for (let i = 0; i < weatherAnalyticsStore.beaufortScale.length; i++) {
       let scaleStore = weatherAnalyticsStore.beaufortScale[i];
