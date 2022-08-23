@@ -1,5 +1,6 @@
 # TODO
 
-- Release 1 features:
-  - wind chill
-  - wind direction
+- Release 2 features:
+  lat & long
+  Accounts
+  members
