@@ -30,20 +30,23 @@ const weatherAnalytics = {
     return (temperature * 9) / 5 + 32;
   },
 
+  //Need Propper Error Checking instead of just returning North
   getWindDirection(windDirection){
-    for (let i = 0; i < weatherAnalyticsStore.compass.length; i++) {
-      let compassStore = weatherAnalyticsStore.compass[i];
-
-      if (windDirection >= compassStore.min && windDirection <= compassStore.max) {
-        return compassStore.direction;
+    const compassStore = weatherAnalyticsStore.compass;
+  
+    for (let i = 0; i < compassStore.length; i++) {
+      if (windDirection >= compassStore[i].min && windDirection <= compassStore[i].max) {
+        return compassStore[i].direction;
       }
     }
-    return null;
+    return compassStore[0].direction;
   },
 
-  getWindChill(windChill){
-    
+  getWindChill(temperature, windSpeed){
+    const v = Math.pow(windSpeed, 0.16);
+    const result = 13.12 + (.6215 * temperature) - (11.37 * v) + (.3965 * temperature * v)
 
+    return result.toFixed(2);
   },
 
   generateWeatherReport(reading) {
@@ -55,7 +58,8 @@ const weatherAnalytics = {
           farenheit: this.getTempAsFaren(reading.temperature),
           weather: this.getWeather(reading.code),
           beaufort: this.getBeaufort(reading.windSpeed),
-          windDirection: this.getWindDirection(reading.windDirection)
+          windDirection: this.getWindDirection(reading.windDirection),
+          windChill: this.getWindChill(reading.temperature, reading.windSpeed)
     } 
     return weatherReport;
   },
