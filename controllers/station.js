@@ -27,15 +27,15 @@ const station = {
 
   addReading(request, response){
     const stationId = request.params.id;
-    const station = stationStore.getStation(stationId);
     const newReading = {
       id: uuid.v1(),
       code: request.body.code,
       temperature: request.body.temperature,
       windSpeed: request.body.windSpeed,
-      pressure: request.body.pressure
+      pressure: request.body.pressure,
+      windDirection: request.body.windDirection
     }
-    console.log("new Song: ", newReading);
+    console.log("new Reading: ", newReading);
     stationStore.addReading(stationId, newReading);
     response.redirect("/station/" + stationId)
   },

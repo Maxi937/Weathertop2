@@ -2,7 +2,7 @@
 
 <section class="ui segment">
     <section class="ui vertical segment">
-        {{#if readings}}
+        {{#if station.readings}}
             {{> latest-station-reading}}
         {{else}}
             {{> empty-latest-reading-panel}}
@@ -10,7 +10,7 @@
     </section>
 
     <section class="ui vertical segment">
-        {{#if readings}}
+        {{#if station.readings}}
             {{> readings-table}}
         {{/if}}
     </section>

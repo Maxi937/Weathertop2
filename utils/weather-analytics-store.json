@@ -115,5 +115,88 @@
       "weather": "Thunder",
       "icon": "bolt icon"
     }
-  ]
+  ],
+
+  "compass":[
+    {
+      "min": 348.75,
+      "max": 11.25,
+      "direction": "North"
+    },
+    {
+      "min": 11.25,
+      "max": 33.75,
+      "direction": "North North East"
+    },
+    {
+      "min": 33.75,
+      "max": 56.25,
+      "direction": "North East"
+    },
+    {
+      "min": 56.25,
+      "max": 78.75,
+      "direction": "East North East"
+    },
+    {
+      "min": 78.25,
+      "max": 101.25,
+      "direction": "East"
+    },
+    {
+      "min": 101.25,
+      "max": 123.75,
+      "direction": "East South East"
+    },
+    {
+      "min": 123.75,
+      "max": 146.25,
+      "direction": "South East"
+    },
+    {
+      "min": 146.25,
+      "max": 168.75,
+      "direction": "South South East"
+    },
+    {
+      "min": 168.75,
+      "max": 191.25,
+      "direction": "South"
+    },
+    {
+      "min": 191.25,
+      "max": 213.75,
+      "direction": "South South West"
+    },
+    {
+      "min": 213.75,
+      "max": 236.25,
+      "direction": "South West"
+    },
+    {
+      "min": 236.25,
+      "max": 258.75,
+      "direction": "West South West"
+    },
+    {
+      "min": 258.75,
+      "max": 281.25,
+      "direction": "West"
+    },
+    {
+      "min": 281.25,
+      "max": 303.75,
+      "direction": "West North West"
+    },
+    {
+      "min": 303.75,
+      "max": 326.25,
+      "direction": "North West"
+    },
+    {
+      "min": 326.25,
+      "max": 348.75,
+      "direction": "North North West"
+    }
+  ] 
 }

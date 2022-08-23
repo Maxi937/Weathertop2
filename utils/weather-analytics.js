@@ -17,6 +17,7 @@ const weatherAnalytics = {
   getBeaufort(windSpeed) {
     for (let i = 0; i < weatherAnalyticsStore.beaufortScale.length; i++) {
       let scaleStore = weatherAnalyticsStore.beaufortScale[i];
+
       if (windSpeed >= scaleStore.min && windSpeed <= scaleStore.max) {
         //console.log(scaleStore);
         return scaleStore.beaufort;
@@ -29,11 +30,23 @@ const weatherAnalytics = {
     return (temperature * 9) / 5 + 32;
   },
 
-  generateWeatherReport(reading) {
-    if (reading == null){
-      return null
+  getWindDirection(windDirection){
+    for (let i = 0; i < weatherAnalyticsStore.compass.length; i++) {
+      let compassStore = weatherAnalyticsStore.compass[i];
+
+      if (windDirection >= compassStore.min && windDirection <= compassStore.max) {
+        return compassStore.direction;
+      }
     }
+    return null;
+  },
+
+  getWindChill(windChill){
     
+
+  },
+
+  generateWeatherReport(reading) {
     const weatherReport = {
           readingId: reading.id,
           temperature: reading.temperature,
@@ -42,6 +55,7 @@ const weatherAnalytics = {
           farenheit: this.getTempAsFaren(reading.temperature),
           weather: this.getWeather(reading.code),
           beaufort: this.getBeaufort(reading.windSpeed),
+          windDirection: this.getWindDirection(reading.windDirection)
     } 
     return weatherReport;
   },
