@@ -51,6 +51,10 @@ const weatherAnalytics = {
   },
 
   generateWeatherReport(reading) {
+    if (reading == null){
+      return null
+    }
+    
     const weatherReport = {
           readingId: reading.id,
           temperature: reading.temperature,

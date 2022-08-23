@@ -4,3 +4,6 @@
   lat & long
   Accounts
   members
+
+- view:
+  Marry the templates
