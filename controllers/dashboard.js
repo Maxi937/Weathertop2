@@ -19,7 +19,7 @@ const dashboard = {
       weatherReports: weatherReports,
     };
 
-    //console.log("Reports", weatherReports);
+    //logger.info(weatherReports);
     response.render("dashboard", viewData);
   },
 

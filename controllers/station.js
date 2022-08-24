@@ -14,7 +14,7 @@ const station = {
 
     const viewData = {
       title: station.name + " Station",
-      station: stationStore.getStation(stationId),
+      station: station,
       weatherReport: weatherReport
     };
     response.render("station", viewData);
