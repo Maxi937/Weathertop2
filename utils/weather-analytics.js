@@ -73,7 +73,6 @@ const weatherAnalytics = {
     return weatherReport;
   },
 
-  //Generates a Weather report for each reading from an array of readings **overload WeatherReport Instead?
   generateMultiWeatherReports(readings) {
     const weatherReportList = [];
 

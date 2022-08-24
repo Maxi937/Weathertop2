@@ -2,13 +2,13 @@
 
 <section class="ui segment">  
     {{#each stations}}
-            <section class="ui vertical segment">
-                {{#if readings}}
-                    {{> latest-dashboard-readings weatherReports = ../weatherReports}}
-                {{else}}
-                    {{> empty-latest-reading-panel}}
-                {{/if}}
-            </section>
+        <section class="ui vertical segment">
+            {{#if readings}}
+                {{> latest-station-reading weatherReport = (lookup ../weatherReports @index)}}
+            {{else}}
+                {{> empty-latest-reading-panel}}
+            {{/if}}
+        </section>
        
         {{! UI Buttons }}
         <section class="ui vertical segment">
