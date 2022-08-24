@@ -13,7 +13,7 @@
 {{#with (lookup weatherReports @index)}}
     <div class="card">
         <div class="ui inverted segment">
-            <i class="right floated huge red ${_anemometer.getWeatherCodeIcon(station.getLastReading())}"></i>
+            <i class="right floated huge {{weatherIcon}}"></i>
             <h2>
                 Weather
             </h2>

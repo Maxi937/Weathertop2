@@ -2,11 +2,13 @@
 
 <section class="ui segment">
     <section class="ui vertical segment">
-        {{#if station.readings}}
-            {{> latest-station-reading}}
-        {{else}}
-            {{> empty-latest-reading-panel}}
-        {{/if}}
+        {{#with station}}
+            {{#if readings}}
+                {{> latest-station-reading weatherReport = ../weatherReport}}
+            {{else}}
+                {{> empty-latest-reading-panel}}
+            {{/if}}
+        {{/with}}
     </section>
 
     <section class="ui vertical segment">

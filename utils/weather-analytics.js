@@ -4,24 +4,24 @@ const weatherAnalyticsStore = require("../utils/weather-analytics-store.json");
 const logger = require("./logger");
 
 const weatherAnalytics = {
+
   getWeather(code) {
-    for (let i = 0; i < weatherAnalyticsStore.weatherCodes.length; i++) {
-      let codeStore = weatherAnalyticsStore.weatherCodes[i];
-      if (code == codeStore.code) {
-        return codeStore.weather;
+    const weatherStore = weatherAnalyticsStore.weatherCodes;
+
+    for (let i = 0; i < weatherStore.length; i++) {
+      if (code == weatherStore[i].code) {
+        return weatherStore[i]
       }
     }
     return null;
   },
 
-  //Refactor to be like getWindDirection
   getBeaufort(windSpeed) {
-    for (let i = 0; i < weatherAnalyticsStore.beaufortScale.length; i++) {
-      let scaleStore = weatherAnalyticsStore.beaufortScale[i];
+    const beaufortStore = weatherAnalyticsStore.beaufortScale;
 
-      if (windSpeed >= scaleStore.min && windSpeed <= scaleStore.max) {
-        //console.log(scaleStore);
-        return scaleStore.beaufort;
+    for (let i = 0; i < beaufortStore.length; i++) {
+      if (windSpeed >= beaufortStore[i].min && windSpeed <= beaufortStore[i].max) {
+        return beaufortStore[i].beaufort;
       }
     }
     return null;
@@ -56,12 +56,16 @@ const weatherAnalytics = {
     }
     
     const weatherReport = {
+          // Static from Reading input
           readingId: reading.id,
           temperature: reading.temperature,
           pressure: reading.pressure,
           windSpeed: reading.windSpeed,
+
+          // Dynamic from Reading input
           farenheit: this.getTempAsFaren(reading.temperature),
-          weather: this.getWeather(reading.code),
+          weather: this.getWeather(reading.code).weather,
+          weatherIcon: this.getWeather(reading.code).icon,
           beaufort: this.getBeaufort(reading.windSpeed),
           windDirection: this.getWindDirection(reading.windDirection),
           windChill: this.getWindChill(reading.temperature, reading.windSpeed)

@@ -3,18 +3,20 @@
         <div class="ui inverted segment">
             <i class="right floated huge violet map marker alternate icon"></i>
             <h2>
-                {{station.name}}
+                {{name}}
             </h2>
         </div>
     </div>
+
+    {{#with weatherReport}}
     <div class="card">
         <div class="ui inverted segment">
-            <i class="right floated huge red ${_anemometer.getWeatherCodeIcon(station.getLastReading())}"></i>
+            <i class="right floated huge {{weatherIcon}}"></i>
             <h2>
                 Weather
             </h2>
              <p>
-                {{weatherReport.weather}}
+                {{weather}}
             </p>
         </div>
     </div>
@@ -26,8 +28,8 @@
             </h2>
             <p>
                 <i class="right floated big blue ${station.getTrendAnalysis('Temp')}"></i>
-                {{weatherReport.temperature}} C <br>
-                {{weatherReport.farenheit}} F <br>
+                {{temperature}} C <br>
+                {{farenheit}} F <br>
             </p>
         </div>
     </div>
@@ -39,10 +41,10 @@
             </h2>
             <p>
                 <i class="right floated big green ${station.getTrendAnalysis('windSpeed')}"></i>
-                {{weatherReport.beaufort}} bft <br>
-                {{weatherReport.windDirection}} <br>
+                {{beaufort}} bft <br>
+                {{windDirection}} <br>
                 Feels like <br>
-                {{weatherReport.windChill}}
+                {{windChill}}
             </p>
         </div>
     </div>
@@ -54,8 +56,9 @@
             </h2>
             <p>
                 <i class="right floated big orange ${station.getTrendAnalysis('windPressure')}"></i>
-                {{weatherReport.pressure}} hpa <br>
+                {{pressure}} hpa <br>
             </p>
         </div>
     </div>
 </div>
+{{/with}}
