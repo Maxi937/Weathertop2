@@ -83,37 +83,37 @@
     {
       "code": 200,
       "weather": "Partial Clouds",
-      "icon": "red cloud sun icon"
+      "icon": "yellow cloud sun icon"
     },
     {
       "code": 300,
       "weather": "Cloudy",
-      "icon": "red cloud icon"
+      "icon": "grey cloud icon"
     },
     {
       "code": 400,
       "weather": "Light Showers",
-      "icon": "cloud sun rain icon"
+      "icon": "yellow cloud sun rain icon"
     },
     {
       "code": 500,
       "weather": "Heavy Showers",
-      "icon": "cloud showers heavy icon"
+      "icon": "blue cloud showers heavy icon"
     },
     {
       "code": 600,
       "weather": "Rain",
-      "icon": "cloud rain icon"
+      "icon": "blue cloud rain icon"
     },
     {
       "code": 700,
       "weather": "Snow",
-      "icon": "snowflake icon"
+      "icon": "white snowflake icon"
     },
     {
       "code": 800,
       "weather": "Thunder",
-      "icon": "bolt icon"
+      "icon": "blue bolt icon"
     }
   ],
 

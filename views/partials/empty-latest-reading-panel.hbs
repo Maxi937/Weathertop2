@@ -1,51 +1,57 @@
 <div class="ui right aligned inverted five cards">
-  <div class="card">
+  <div class=" card">
     <div class="ui inverted segment">
       <i class="right floated huge violet map marker alternate icon"></i>
       <h2>
         {{name}}
       </h2>
       <p>
-        Lat:
-        <p2 class="FormatMe">{{latitude}}</p2>
-        <br />
-        Lng:
-        <p2 class="FormatMe">{{longitude}}</p2>
+        Lat: {{latitude}}
+        <br>
+        Lng: {{longitude}}
       </p>
       <p>
-        Insert Station Readings
+        Insert Station Reading
       </p>
     </div>
   </div>
 
-  <div class="ui card">
-    <div class="ui center aligned fluid inverted segment">
-      <i class="huge center red cloud icon"></i>
+  <div class="card">
+    <div class="ui inverted segment">
+      <i class="right floated huge orange sun icon"></i>
       <h2>
         Weather
       </h2>
     </div>
   </div>
 
-  <div class="ui card">
-    <div class="ui center aligned fluid inverted segment">
-      <i class="huge center blue thermometer icon"></i>
+  <div class="card">
+    <div class="ui inverted segment">
+      <i class="right floated huge blue temperature low icon"></i>
       <h2>
         Temp
       </h2>
     </div>
   </div>
 
-  <div class="ui card">
-    <div class="ui center aligned fluid inverted segment">
-      <i class="huge center green wind icon"></i>
-
+  <div class="card">
+    <div class="ui inverted segment">
+      <i class="right floated huge green wind icon"></i>
+      <h2>
+        Wind
+      </h2>
+      <p>
+        <i class="right floated big green ${station.getTrendAnalysis('windSpeed')}"></i>
+      </p>
     </div>
   </div>
 
-  <div class="ui card">
-    <div class="ui center aligned fluid inverted segment">
-      <i class="huge center orange stroopwafel icon"></i>
+  <div class="card">
+    <div class="ui inverted segment">
+      <i class="right floated huge orange stroopwafel icon"></i>
+      <h2>
+        Pressure
+      </h2>
     </div>
   </div>
 </div>
