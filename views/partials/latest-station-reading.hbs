@@ -1,69 +1,79 @@
 <div class="ui right aligned inverted five cards">
-    <div class=" card">
-        <div class="ui inverted segment">
-            <i class="right floated huge violet map marker alternate icon"></i>
-            <h2>
-                {{name}}
-            </h2>
-             <p>
-                Lat: <p2 class = "FormatMe">{{latitude}}</p2> <br>
-                Lng: <p2 class = "FormatMe">{{longitude}}</p2>
-            </p>
-        </div>
+  <div class=" card">
+    <div class="ui inverted segment">
+      <i class="right floated huge violet map marker alternate icon"></i>
+      <h2>
+        {{name}}
+      </h2>
+      <p>
+        Lat: <p2 class="FormatMe">{{latitude}}</p2> 
+        <br>
+        Lng: <p2 class="FormatMe">{{longitude}}</p2>
+      </p>
     </div>
+  </div>
 
-    {{#with weatherReport}}
-    <div class="card">
-        <div class="ui inverted segment">
-            <i class="right floated huge {{weatherIcon}}"></i>
-            <h2>
-                Weather
-            </h2>
-             <p>
-                {{weather}}
-            </p>
-        </div>
+  {{#with weatherReport}}
+  <div class="card">
+    <div class="ui inverted segment">
+      <i class="right floated huge {{weatherIcon}}"></i>
+      <h2>
+        Weather
+      </h2>
+      <p>
+        {{weather}}
+      </p>
     </div>
-    <div class="card">
-        <div class="ui inverted segment">
-            <i class="right floated huge blue temperature low icon"></i>
-            <h2>
-                Temp
-            </h2>
-            <p>
-                <i class="right floated big blue ${station.getTrendAnalysis('Temp')}"></i>
-                {{temperature}} C <br>
-                {{farenheit}} F <br>
-            </p>
-        </div>
+  </div>
+
+  <div class="card">
+    <div class="ui inverted segment">
+      <i class="right floated huge blue temperature low icon"></i>
+      <h2>
+        Temp
+      </h2>
+      <p>
+        <i class="right floated big blue ${station.getTrendAnalysis('Temp')}"></i>
+        {{temperature}} C 
+        <br>
+        {{farenheit}} F 
+        <br>
+      </p>
     </div>
-    <div class="card">
-        <div class="ui inverted segment">
-            <i class="right floated huge green wind icon"></i>
-            <h2>
-                Wind
-            </h2>
-            <p>
-                <i class="right floated big green ${station.getTrendAnalysis('windSpeed')}"></i>
-                {{beaufort}} bft <br>
-                {{windDirection}} <br>
-                Feels like <br>
-                {{windChill}}
-            </p>
-        </div>
+  </div>
+
+  <div class="card">
+    <div class="ui inverted segment">
+      <i class="right floated huge green wind icon"></i>
+      <h2>
+        Wind
+      </h2>
+      <p>
+        <i class="right floated big green ${station.getTrendAnalysis('windSpeed')}"></i>
+        {{beaufort}} bft 
+        <br>
+        {{windDirection}} 
+        <br>
+        Feels like 
+        <br>
+        {{windChill}}
+      </p>
     </div>
-    <div class="card">
-        <div class="ui inverted segment">
-            <i class="right floated huge orange stroopwafel icon"></i>
-            <h2>
-                Pressure
-            </h2>
-            <p>
-                <i class="right floated big orange ${station.getTrendAnalysis('windPressure')}"></i>
-                {{pressure}} hpa <br>
-            </p>
-        </div>
+  </div>
+
+  <div class="card">
+    <div class="ui inverted segment">
+      <i class="right floated huge orange stroopwafel icon"></i>
+      <h2>
+        Pressure
+      </h2>
+      <p>
+        <i class="right floated big orange ${station.getTrendAnalysis('windPressure')}"></i>
+        {{pressure}} hpa 
+        <br>
+      </p>
     </div>
+  </div>
 </div>
 {{/with}}
 

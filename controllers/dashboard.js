@@ -10,12 +10,12 @@ const dashboard = {
     logger.info("dashboard rendering");
 
     const stations = stationStore.getAllStations();
-    const latestReadings = stationStore.getAllLatestStationReadings(stations)
+    const latestReadings = stationStore.getAllLatestStationReadings(stations);
     const weatherReports = weatherAnalytics.generateMultiWeatherReports(latestReadings);
 
-    for (const station of stations){
-      station.latitude = Number(station.latitude).toFixed(2)
-      station.longitude = Number(station.longitude).toFixed(2)
+    for (const station of stations) {
+      station.latitude = Number(station.latitude).toFixed(2);
+      station.longitude = Number(station.longitude).toFixed(2);
     }
 
     const viewData = {
@@ -30,11 +30,11 @@ const dashboard = {
 
   addStation(request, response) {
     const newStation = {
-    id: uuid.v1(),
-    name: request.body.name,
-    latitude: request.body.latitude,
-    longitude: request.body.longitude,
-      readings: []
+      id: uuid.v1(),
+      name: request.body.name,
+      latitude: request.body.latitude,
+      longitude: request.body.longitude,
+      readings: [],
     };
     stationStore.addStation(newStation);
     response.redirect("/dashboard");
@@ -44,7 +44,7 @@ const dashboard = {
     const stationId = request.params.id;
     stationStore.removeStation(stationId);
     response.redirect("/dashboard");
-  }
+  },
 };
 
 module.exports = dashboard;

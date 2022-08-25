@@ -3,8 +3,8 @@
     {
       "id": "01",
       "name": "Tramore",
-      "latitude": 52.16235,
-      "longitude": -7.15244,
+      "latitude": "52.16",
+      "longitude": "-7.15",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "readings": [
         {
@@ -36,8 +36,8 @@
     {
       "id": "05",
       "name": "Dunmore",
-      "latitude": 52.1499994,
-      "longitude": -6.9833294,
+      "latitude": "52.15",
+      "longitude": "-6.98",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "readings": [
         {
@@ -61,9 +61,18 @@
     {
       "id": "0535edd0-2499-11ed-bf42-ffa5e0d5db60",
       "name": "Wexford",
-      "latitude": "12.555",
-      "longitude": "34.555",
-      "readings": []
+      "latitude": "12.55",
+      "longitude": "34.55",
+      "readings": [
+        {
+          "id": "091395d0-249c-11ed-83e3-332199f991a5",
+          "code": "300",
+          "temperature": "6.0",
+          "windSpeed": "8.5",
+          "pressure": "1004",
+          "windDirection": "240"
+        }
+      ]
     }
   ]
 }

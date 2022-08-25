@@ -10,20 +10,20 @@ const station = {
     const stationId = request.params.id;
     const station = stationStore.getStation(stationId);
     const latestReading = stationStore.getLatestStationReading(stationId);
-    const weatherReport = weatherAnalytics.generateWeatherReport(latestReading)
+    const weatherReport = weatherAnalytics.generateWeatherReport(latestReading);
 
-    station.latitude = Number(station.latitude).toFixed(2)
-    station.longitude = Number(station.longitude).toFixed(2)
+    station.latitude = Number(station.latitude).toFixed(2);
+    station.longitude = Number(station.longitude).toFixed(2);
 
     const viewData = {
       title: station.name + " Station",
       station: station,
-      weatherReport: weatherReport
+      weatherReport: weatherReport,
     };
     response.render("station", viewData);
   },
 
-  addReading(request, response){
+  addReading(request, response) {
     const stationId = request.params.id;
     const newReading = {
       id: uuid.v1(),
@@ -31,11 +31,11 @@ const station = {
       temperature: request.body.temperature,
       windSpeed: request.body.windSpeed,
       pressure: request.body.pressure,
-      windDirection: request.body.windDirection
-    }
+      windDirection: request.body.windDirection,
+    };
     console.log("new Reading: ", newReading);
     stationStore.addReading(stationId, newReading);
-    response.redirect("/station/" + stationId)
+    response.redirect("/station/" + stationId);
   },
 
   deleteReading(request, response) {
@@ -44,8 +44,7 @@ const station = {
     logger.debug(`Deleting Song ${readingId} from Playlist ${stationId}`);
     stationStore.removeReading(stationId, readingId);
     response.redirect("/station/" + stationId);
-  }
-
+  },
 };
 
 module.exports = station;
