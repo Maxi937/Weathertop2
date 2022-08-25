@@ -10,8 +10,7 @@ const dashboard = {
     logger.info("dashboard rendering");
 
     const stations = stationStore.getAllStations();
-    const latestReadings = stationStore.getAllLatestStationReadings(stations);
-    const weatherReports = weatherAnalytics.generateMultiWeatherReports(latestReadings);
+    const weatherReports = weatherAnalytics.generateMultiWeatherReports(stations);
 
     for (const station of stations) {
       station.latitude = Number(station.latitude).toFixed(2);

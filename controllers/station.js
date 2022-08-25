@@ -9,8 +9,7 @@ const station = {
   index(request, response) {
     const stationId = request.params.id;
     const station = stationStore.getStation(stationId);
-    const latestReading = stationStore.getLatestStationReading(stationId);
-    const weatherReport = weatherAnalytics.generateWeatherReport(latestReading);
+    const weatherReport = weatherAnalytics.generateWeatherReport(station);
 
     station.latitude = Number(station.latitude).toFixed(2);
     station.longitude = Number(station.longitude).toFixed(2);

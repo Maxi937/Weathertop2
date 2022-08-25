@@ -13,29 +13,8 @@ const stationStore = {
     return this.store.findAll(this.collection);
   },
 
-  getAllLatestStationReadings(stationCollection) {
-    const readingList = [];
-
-    for (let i = 0; i < stationCollection.length; i++) {
-      let latestReading = this.getLatestStationReading(stationCollection[i].id);
-      readingList.push(latestReading);
-    }
-    return readingList;
-  },
-
   getStation(id) {
     return this.store.findOneBy(this.collection, { id: id });
-  },
-
-  getLatestStationReading(id) {
-    let station = this.store.findOneBy(this.collection, { id: id });
-    let latestReading = null;
-
-    if (station.readings.length > 0) {
-      latestReading = station.readings.length - 1;
-      return station.readings[latestReading];
-    }
-    return null;
   },
 
   addStation(station) {
