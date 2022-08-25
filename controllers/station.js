@@ -12,6 +12,9 @@ const station = {
     const latestReading = stationStore.getLatestStationReading(stationId);
     const weatherReport = weatherAnalytics.generateWeatherReport(latestReading)
 
+    station.latitude = Number(station.latitude).toFixed(2)
+    station.longitude = Number(station.longitude).toFixed(2)
+
     const viewData = {
       title: station.name + " Station",
       station: station,

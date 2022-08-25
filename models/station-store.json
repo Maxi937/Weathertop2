@@ -3,8 +3,8 @@
     {
       "id": "01",
       "name": "Tramore",
-      "latitude": 52.1623500,
-      "longitude": -7.1524400, 
+      "latitude": 52.16235,
+      "longitude": -7.15244,
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "readings": [
         {
@@ -57,6 +57,13 @@
           "windDirection": 102
         }
       ]
+    },
+    {
+      "id": "0535edd0-2499-11ed-bf42-ffa5e0d5db60",
+      "name": "Wexford",
+      "latitude": "12.555",
+      "longitude": "34.555",
+      "readings": []
     }
   ]
 }

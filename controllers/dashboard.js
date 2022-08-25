@@ -13,6 +13,11 @@ const dashboard = {
     const latestReadings = stationStore.getAllLatestStationReadings(stations)
     const weatherReports = weatherAnalytics.generateMultiWeatherReports(latestReadings);
 
+    for (const station of stations){
+      station.latitude = Number(station.latitude).toFixed(2)
+      station.longitude = Number(station.longitude).toFixed(2)
+    }
+
     const viewData = {
       title: "Dashboard",
       stations: stations,
@@ -27,6 +32,8 @@ const dashboard = {
     const newStation = {
     id: uuid.v1(),
     name: request.body.name,
+    latitude: request.body.latitude,
+    longitude: request.body.longitude,
       readings: []
     };
     stationStore.addStation(newStation);

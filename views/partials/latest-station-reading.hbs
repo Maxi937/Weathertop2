@@ -6,8 +6,8 @@
                 {{name}}
             </h2>
              <p>
-                Lat: <i class = "FormatMe">{{latitude}}</i> <br>
-                Lng: <i class = "FormatMe">{{longitude}}</i>
+                Lat: <p2 class = "FormatMe">{{latitude}}</p2> <br>
+                Lng: <p2 class = "FormatMe">{{longitude}}</p2>
             </p>
         </div>
     </div>
@@ -68,10 +68,3 @@
 {{/with}}
 
 {{! Will Format any number with the class "FormatMe" to 2 decimal places}}
-<script>
-    var formatCollection = document.getElementsByClassName("FormatMe")
-        for (let i = 0; i < formatCollection.length; i++){
-            myNumberToFormat = Number(formatCollection[i].innerHTML)
-            document.getElementsByClassName("FormatMe")[i].innerHTML = myNumberToFormat.toFixed(2)
-        }       
-</script>
