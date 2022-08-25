@@ -6,7 +6,10 @@ const _ = require("lodash");
 
 const weatherAnalytics = {
   generateWeatherReport(station) {
+
     if (station.readings.length > 0) {
+
+      const maxReadings = this.getMax(station.readings)
       const reading = _.last(station.readings);
     
       const weatherReport = {
@@ -15,6 +18,11 @@ const weatherAnalytics = {
         temperature: reading.temperature,
         pressure: reading.pressure,
         windSpeed: reading.windSpeed,
+
+        //MaxMins
+        maxTemperature: maxReadings.maxTemperature,
+        maxWindSpeed: maxReadings.maxWindSpeed,
+        maxPressure: maxReadings.maxPressure,
 
         // Dynamic from Reading input
         farenheit: this.getTempAsFaren(reading.temperature),
@@ -84,12 +92,33 @@ const weatherAnalytics = {
   },
 
   getMax(readings) {
-    if ((readings = null)) {
-      return null;
+    let maxTemperature = 0
+    let maxWindSpeed = 0
+    let maxPressure = 0
+
+    for (const reading of readings) {
+      console.log(reading.temperature)
+
+      if(reading.temperature > maxTemperature){
+        maxTemperature = reading.temperature;
+      }
+
+      if(reading.windSpeed > maxWindSpeed){
+        maxWindSpeed = reading.windSpeed
+      }
+
+      if(reading.pressure > maxPressure){
+        maxPressure = reading.pressure
+      }
     }
-    for (let i = 0; i < readings.length; i++) {
-      console.log(readings[i]);
+    const maxObject = {
+      maxTemperature: maxTemperature,
+      maxWindSpeed: maxWindSpeed,
+      maxPressure: maxPressure
     }
+    
+    console.log(maxObject);
+    return maxObject
   },
 };
 
