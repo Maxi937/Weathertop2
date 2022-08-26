@@ -17,6 +17,9 @@ router.get("/logout", accounts.logout);
 router.post("/register", accounts.register);
 router.post("/authenticate", accounts.authenticate);
 
+//member -----change to redirect to member
+router.get("/member", dashboard.index)
+
 //About
 router.get("/about", about.index);
 

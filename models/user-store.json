@@ -20,6 +20,13 @@
       "email": "mhornby123@gmail.com",
       "password": "secret",
       "id": "90c425f0-2562-11ed-82c1-b92dac6291d4"
+    },
+    {
+      "firstName": "Lorna",
+      "lastName": "Lin",
+      "email": "lorna@gmail.com",
+      "password": "secret",
+      "id": "74207710-2566-11ed-abfe-8b31ef30acb3"
     }
   ]
 }

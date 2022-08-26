@@ -125,7 +125,7 @@ const weatherAnalytics = {
 
   getMin(readings){
     let minTemperature = _.first(readings).temperature;
-    let minWindSpeed = _.first(readings).temperature;
+    let minWindSpeed = _.first(readings).windSpeed;
     let minPressure = _.first(readings).pressure;
 
     for(const reading of readings){

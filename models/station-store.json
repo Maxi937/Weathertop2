@@ -104,6 +104,31 @@
       "latitude": "35.97",
       "longitude": "-450.88",
       "readings": []
+    },
+    {
+      "id": "7f7d3f80-2566-11ed-abfe-8b31ef30acb3",
+      "userId": "74207710-2566-11ed-abfe-8b31ef30acb3",
+      "name": "Antrim",
+      "latitude": "88.00",
+      "longitude": "767.00",
+      "readings": [
+        {
+          "id": "84672ec0-2566-11ed-abfe-8b31ef30acb3",
+          "code": "200",
+          "temperature": "8.0",
+          "windSpeed": "8.5",
+          "pressure": "8",
+          "windDirection": "240"
+        },
+        {
+          "id": "0300b2b0-2567-11ed-b023-b9b0deeb7901",
+          "code": "200",
+          "temperature": "7.5",
+          "windSpeed": "3.5",
+          "pressure": "1006",
+          "windDirection": "252"
+        }
+      ]
     }
   ]
 }
