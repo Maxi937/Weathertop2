@@ -5,11 +5,13 @@
         <header class="item"> {{title}} </header>
     </div>
 
+ 
+
     <div class="right menu">
-        {{!<a id="member" class="item" href="/member"> Account </a>}}
         <a id="dashboard" class="item" href="/dashboard"> Dashboard </a>
         <a id="about" class="item" href="/about"> About </a>
-        {{!<a id="logout" class="item" href="/logout"> Logout </a>}}
+        <a id="member" class="item" href="/member"> {{./loggedInUser}} </a>
+        <a id="logout" class="item" href="/logout"> Logout </a>
     </div>
 </nav>
 

@@ -4,12 +4,14 @@ const logger = require("../utils/logger");
 const uuid = require("uuid");
 const stationStore = require("../models/station-store");
 const weatherAnalytics = require("../utils/weather-analytics");
+const accounts = require("./accounts.js")
 
 const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
+    const loggedInUser = accounts.getCurrentUser(request);
 
-    const stations = stationStore.getAllStations();
+    const stations = stationStore.getUserStations(loggedInUser.id);
     const weatherReports = weatherAnalytics.generateMultiWeatherReports(stations);
 
     for (const station of stations) {
@@ -21,15 +23,17 @@ const dashboard = {
       title: "Dashboard",
       stations: stations,
       weatherReports: weatherReports,
+      loggedInUser: loggedInUser.firstName
     };
-
-    //logger.info(weatherReports);
+    logger.info("www", viewData);
     response.render("dashboard", viewData);
   },
 
   addStation(request, response) {
+    const loggedInUser = accounts.getCurrentUser(request)
     const newStation = {
       id: uuid.v1(),
+      userId: loggedInUser.id,
       name: request.body.name,
       latitude: request.body.latitude,
       longitude: request.body.longitude,

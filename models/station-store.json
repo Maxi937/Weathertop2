@@ -72,6 +72,38 @@
       "latitude": "12.55",
       "longitude": "34.55",
       "readings": []
+    },
+    {
+      "id": "561e86d0-2561-11ed-a70a-3de2466bd5ef",
+      "name": "Tramore",
+      "latitude": "700",
+      "longitude": "34.555",
+      "readings": []
+    },
+    {
+      "id": "e773ba10-2561-11ed-9122-2f6ff30f8f7d",
+      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Wexford",
+      "latitude": "12.55",
+      "longitude": "34.55",
+      "readings": [
+        {
+          "id": "8098e580-2562-11ed-82c1-b92dac6291d4",
+          "code": "200",
+          "temperature": "9.0",
+          "windSpeed": "8.5",
+          "pressure": "1004",
+          "windDirection": "180"
+        }
+      ]
+    },
+    {
+      "id": "9ff32c10-2562-11ed-82c1-b92dac6291d4",
+      "userId": "90c425f0-2562-11ed-82c1-b92dac6291d4",
+      "name": "Antrim",
+      "latitude": "35.97",
+      "longitude": "-450.88",
+      "readings": []
     }
   ]
 }

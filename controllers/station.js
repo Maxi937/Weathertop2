@@ -4,12 +4,14 @@ const logger = require("../utils/logger");
 const stationStore = require("../models/station-store");
 const weatherAnalytics = require("../utils/weather-analytics");
 const uuid = require("uuid");
+const accounts = require("./accounts.js")
 
 const station = {
   index(request, response) {
     const stationId = request.params.id;
     const station = stationStore.getStation(stationId);
     const weatherReport = weatherAnalytics.generateWeatherReport(station);
+    const loggedInUser = accounts.getCurrentUser(request);
 
     station.latitude = Number(station.latitude).toFixed(2);
     station.longitude = Number(station.longitude).toFixed(2);
@@ -18,6 +20,7 @@ const station = {
       title: station.name + " Station",
       station: station,
       weatherReport: weatherReport,
+      loggedInUser: loggedInUser.firstName
     };
     response.render("station", viewData);
   },

@@ -101,8 +101,6 @@ const weatherAnalytics = {
     let maxPressure = 0;
 
     for (const reading of readings) {
-      console.log(reading.temperature)
-
       if(reading.temperature > maxTemperature){
         maxTemperature = reading.temperature;
       }
