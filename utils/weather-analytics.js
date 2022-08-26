@@ -10,6 +10,7 @@ const weatherAnalytics = {
     if (station.readings.length > 0) {
 
       const maxReadings = this.getMax(station.readings)
+      const minReadings = this.getMin(station.readings)
       const reading = _.last(station.readings);
     
       const weatherReport = {
@@ -23,6 +24,9 @@ const weatherAnalytics = {
         maxTemperature: maxReadings.maxTemperature,
         maxWindSpeed: maxReadings.maxWindSpeed,
         maxPressure: maxReadings.maxPressure,
+        minTemperature: minReadings.minTemperature,
+        minWindSpeed: minReadings.minWindSpeed,
+        minPressure: minReadings.minPressure,
 
         // Dynamic from Reading input
         farenheit: this.getTempAsFaren(reading.temperature),
@@ -92,9 +96,9 @@ const weatherAnalytics = {
   },
 
   getMax(readings) {
-    let maxTemperature = 0
-    let maxWindSpeed = 0
-    let maxPressure = 0
+    let maxTemperature = 0;
+    let maxWindSpeed = 0;
+    let maxPressure = 0;
 
     for (const reading of readings) {
       console.log(reading.temperature)
@@ -104,22 +108,50 @@ const weatherAnalytics = {
       }
 
       if(reading.windSpeed > maxWindSpeed){
-        maxWindSpeed = reading.windSpeed
+        maxWindSpeed = reading.windSpeed;
       }
 
       if(reading.pressure > maxPressure){
-        maxPressure = reading.pressure
+        maxPressure = reading.pressure;
       }
     }
-    const maxObject = {
+    const maxResult = {
       maxTemperature: maxTemperature,
       maxWindSpeed: maxWindSpeed,
       maxPressure: maxPressure
     }
     
-    console.log(maxObject);
-    return maxObject
+    console.log("Max:", maxResult);
+    return maxResult;
   },
+
+  getMin(readings){
+    let minTemperature = _.first(readings).temperature;
+    let minWindSpeed = _.first(readings).temperature;
+    let minPressure = _.first(readings).pressure;
+
+    for(const reading of readings){
+      if(reading.temperature < minTemperature){
+        minTemperature = reading.temperature;
+      }
+
+      if(reading.windSpeed < minWindSpeed){
+        minWindSpeed = reading.windSpeed;
+      }
+
+      if(reading.pressure < minPressure){
+        minPressure = reading.pressure;
+      }
+    }
+    const minResult = {
+      minTemperature: minTemperature,
+      minWindSpeed: minWindSpeed,
+      minPressure: minPressure
+    }
+    
+    console.log("Min", minResult);
+    return minResult;
+  }
 };
 
 module.exports = weatherAnalytics;
