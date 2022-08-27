@@ -1,7 +1,6 @@
 "use strict";
 
 const weatherAnalyticsStore = require("../utils/weather-analytics-store.json");
-const formatDateTime = require("./date-time");
 const logger = require("./logger");
 const _ = require("lodash");
 
@@ -20,6 +19,11 @@ const weatherAnalytics = {
         temperature: reading.temperature,
         pressure: reading.pressure,
         windSpeed: reading.windSpeed,
+
+        //Trends
+        temperatureTrend: this.getTrends(station.readings,"temperature"),
+        windSpeedTrend: this.getTrends(station.readings,"windSpeed"),
+        pressureTrend: this.getTrends(station.readings,"pressure"),
 
         //MaxMins
         maxTemperature: maxReadings.maxTemperature,
@@ -150,7 +154,27 @@ const weatherAnalytics = {
     
     //console.log("Min", minResult);
     return minResult;
-  }
+  },
+
+  getTrends(readings){
+
+    if (readings.length >= 3) {
+      readings = readings.slice(-3)
+
+      if (tempTrend > parseFloat(readings[0].temperature) && parseFloat(readings[2].trendToAnalyse) > tempTrend){
+        return "arrow up icon";
+      }
+
+      if (tempTrend < parseFloat(readings[0].trendToAnalyse) && parseFloat(readings[2].trendToAnalyse) < tempTrend){
+        console.log()
+        return "arrow down icon";
+      }
+
+      return null
+    }
+  },
+
+
 };
 
 module.exports = weatherAnalytics;
