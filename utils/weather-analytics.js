@@ -1,6 +1,7 @@
 "use strict";
 
 const weatherAnalyticsStore = require("../utils/weather-analytics-store.json");
+const formatDateTime = require("./date-time");
 const logger = require("./logger");
 const _ = require("lodash");
 
@@ -8,12 +9,12 @@ const weatherAnalytics = {
   generateWeatherReport(station) {
 
     if (station.readings.length > 0) {
-
       const maxReadings = this.getMax(station.readings)
       const minReadings = this.getMin(station.readings)
       const reading = _.last(station.readings);
     
       const weatherReport = {
+
         // Static from Reading input
         readingId: reading.id,
         temperature: reading.temperature,
@@ -119,7 +120,7 @@ const weatherAnalytics = {
       maxPressure: maxPressure
     }
     
-    console.log("Max:", maxResult);
+    //console.log("Max:", maxResult);
     return maxResult;
   },
 
@@ -147,7 +148,7 @@ const weatherAnalytics = {
       minPressure: minPressure
     }
     
-    console.log("Min", minResult);
+    //console.log("Min", minResult);
     return minResult;
   }
 };

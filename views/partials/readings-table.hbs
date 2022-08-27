@@ -1,7 +1,7 @@
 <table class="ui fixed table">
     <thead>
     <tr>
-        {{! <th>Date</th> }}
+        <th>Date</th>
         <th class="center aligned">Code</th>
         <th class="center aligned">Temp</th>
         <th class="center aligned">Wind Speed</th>
@@ -11,14 +11,13 @@
     </tr>
     </thead>
     <tbody>
+
     
     {{#each station.readings}}
-    <tr>{{!
-        <td>
-            date
+    <tr>
+        <td class="date">
+            {{date}}
         </td>
-        }}
-
         <td class="center aligned">
             {{code}}
         </td>
@@ -43,3 +42,22 @@
     {{/each}}
     </tbody>
 </table>
+
+
+{{!Script to Format dates in readings table, could not do it by editing data - edited dates 
+would be in JSON Data on Reresh of page and when conversion ran again would error}}
+<script>
+const dateOptions = {
+  year: "numeric",
+  month: "numeric",
+  day: "numeric",
+  hour: "numeric",
+  minute: "numeric",
+  second: "numeric",
+};
+
+dateArray = document.getElementsByClassName("date")
+      for (const element of dateArray){
+        element.innerHTML = new Date(element.innerHTML.trim()).toLocaleDateString("en-ie", dateOptions);
+      }
+</script>

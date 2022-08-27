@@ -2,7 +2,8 @@
 
 const logger = require("../utils/logger");
 const stationStore = require("../models/station-store");
-const weatherAnalytics = require("../utils/weather-analytics");
+const weatherAnalytics = require("../utils/weather-analytics")
+const formatDateTime = require("../utils/date-time")
 const uuid = require("uuid");
 const accounts = require("./accounts.js")
 
@@ -26,9 +27,12 @@ const station = {
   },
 
   addReading(request, response) {
+    const date = new Date()
     const stationId = request.params.id;
+
     const newReading = {
       id: uuid.v1(),
+      date: date,
       code: request.body.code,
       temperature: request.body.temperature,
       windSpeed: request.body.windSpeed,

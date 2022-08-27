@@ -25,7 +25,6 @@ const dashboard = {
       weatherReports: weatherReports,
       loggedInUser: loggedInUser.firstName
     };
-    logger.info("www", viewData);
     response.render("dashboard", viewData);
   },
 

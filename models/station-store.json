@@ -5,7 +5,7 @@
       "name": "Tramore",
       "latitude": "52.16",
       "longitude": "-7.15",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "readings": [
         {
           "id": "02",
@@ -13,7 +13,8 @@
           "temperature": 0.5,
           "windSpeed": 3.5,
           "pressure": 1002,
-          "windDirection": 90
+          "windDirection": 90,
+          "date": "2021-04-25T07:20:42.138Z"
         },
         {
           "id": "03",
@@ -21,15 +22,35 @@
           "temperature": 6,
           "windSpeed": 2,
           "pressure": 1004,
-          "windDirection": 96
+          "windDirection": 96,
+          "date": "2021-05-25T07:20:42.138Z"
         },
         {
           "id": "04",
+          "date": "2021-06-25T07:20:42.138Z",
           "code": 700,
           "temperature": 8,
           "windSpeed": 1,
           "pressure": 1005,
           "windDirection": 101
+        },
+        {
+          "id": "b0c8cb50-2628-11ed-aa5e-3f3447c33821",
+          "date": "2022-08-27T16:54:07.740Z",
+          "code": "300",
+          "temperature": "9.0",
+          "windSpeed": "8.5",
+          "pressure": "1004",
+          "windDirection": "360"
+        },
+        {
+          "id": "dda3cbc0-2628-11ed-a6ff-13015922ec3e",
+          "date": "2022-08-27T16:54:07.740Z",
+          "code": "200",
+          "temperature": "8.0",
+          "windSpeed": "3.5",
+          "pressure": "1004",
+          "windDirection": "0"
         }
       ]
     },
@@ -38,7 +59,7 @@
       "name": "Dunmore",
       "latitude": "52.15",
       "longitude": "-6.98",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "readings": [
         {
           "id": "06",
@@ -46,7 +67,8 @@
           "temperature": 8,
           "windSpeed": 1,
           "pressure": 999,
-          "windDirection": 98
+          "windDirection": 98,
+          "date": "2021-02-25T07:20:42.138Z"
         },
         {
           "id": "07",
@@ -54,13 +76,15 @@
           "temperature": 0.5,
           "windSpeed": 3.5,
           "pressure": 1000,
-          "windDirection": 102
+          "windDirection": 102,
+          "date": "2021-03-25T07:20:42.138Z"
         },
         {
-          "id": "21399180-24a8-11ed-a530-0dc85f337b2f",
-          "code": "400",
+          "id": "eb61e650-2634-11ed-9514-4163c4a58cd2",
+          "date": "2022-08-27T18:20:24.757Z",
+          "code": "300",
           "temperature": "9.0",
-          "windSpeed": "8.5",
+          "windSpeed": "90",
           "pressure": "1004",
           "windDirection": "180"
         }
@@ -79,23 +103,6 @@
       "latitude": "700",
       "longitude": "34.555",
       "readings": []
-    },
-    {
-      "id": "e773ba10-2561-11ed-9122-2f6ff30f8f7d",
-      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "name": "Wexford",
-      "latitude": "12.55",
-      "longitude": "34.55",
-      "readings": [
-        {
-          "id": "8098e580-2562-11ed-82c1-b92dac6291d4",
-          "code": "200",
-          "temperature": "9.0",
-          "windSpeed": "8.5",
-          "pressure": "1004",
-          "windDirection": "180"
-        }
-      ]
     },
     {
       "id": "9ff32c10-2562-11ed-82c1-b92dac6291d4",
