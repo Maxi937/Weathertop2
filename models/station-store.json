@@ -87,6 +87,15 @@
           "windSpeed": "90",
           "pressure": "1004",
           "windDirection": "180"
+        },
+        {
+          "id": "29fb9860-26f9-11ed-afb0-952a5bd8a7f7",
+          "date": "2022-08-28T17:45:11.142Z",
+          "code": "100",
+          "temperature": "9.0",
+          "windSpeed": "90",
+          "pressure": "8",
+          "windDirection": "180"
         }
       ]
     },
@@ -136,14 +145,6 @@
           "windDirection": "252"
         }
       ]
-    },
-    {
-      "id": "f3879500-26f7-11ed-8775-adde02861a1b",
-      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "name": "Waterford",
-      "latitude": "-100",
-      "longitude": "250",
-      "readings": []
     }
   ]
 }
