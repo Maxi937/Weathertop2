@@ -13,6 +13,9 @@ const dashboard = {
     const stations = stationStore.getUserStations(loggedInUser.id);
     const weatherReports = weatherAnalytics.generateMultiWeatherReports(stations);
 
+    //  Make this like how the date and time are handled, becuase this is changing the JSON file --
+    //  If addReading is called it saves the JSON and temp changes to the data while the program --
+    //  is running get saved, such as the lat and long here:
     for (const station of stations) {
       station.latitude = Number(station.latitude).toFixed(2);
       station.longitude = Number(station.longitude).toFixed(2);
