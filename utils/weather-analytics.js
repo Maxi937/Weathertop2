@@ -4,26 +4,20 @@ const weatherAnalyticsStore = require("../utils/weather-analytics-store.json");
 const logger = require("./logger");
 const _ = require("lodash");
 
+//Maybe just take in station.readings instead of taking in station
 const weatherAnalytics = {
   generateWeatherReport(station) {
-
     if (station.readings.length > 0) {
-      const maxReadings = this.getMax(station.readings)
-      const minReadings = this.getMin(station.readings)
+      const maxReadings = this.getMax(station.readings);
+      const minReadings = this.getMin(station.readings);
       const reading = _.last(station.readings);
-    
-      const weatherReport = {
 
+      const weatherReport = {
         // Static from Reading input
         readingId: reading.id,
         temperature: reading.temperature,
         pressure: reading.pressure,
         windSpeed: reading.windSpeed,
-
-        //Trends
-        temperatureTrend: this.getTrends(station.readings,"temperature"),
-        windSpeedTrend: this.getTrends(station.readings,"windSpeed"),
-        pressureTrend: this.getTrends(station.readings,"pressure"),
 
         //MaxMins
         maxTemperature: maxReadings.maxTemperature,
@@ -40,6 +34,11 @@ const weatherAnalytics = {
         beaufort: this.getBeaufort(reading.windSpeed),
         windDirection: this.getWindDirection(reading.windDirection),
         windChill: this.getWindChill(reading.temperature, reading.windSpeed),
+
+        //Trends
+        temperatureTrend: this.getTrends(station.readings, "temperature"),
+        windSpeedTrend: this.getTrends(station.readings, "windSpeed"),
+        pressureTrend: this.getTrends(station.readings, "pressure"),
       };
       return weatherReport;
     }
@@ -106,75 +105,74 @@ const weatherAnalytics = {
     let maxPressure = 0;
 
     for (const reading of readings) {
-      if(reading.temperature > maxTemperature){
+      if (reading.temperature > maxTemperature) {
         maxTemperature = reading.temperature;
       }
 
-      if(reading.windSpeed > maxWindSpeed){
+      if (reading.windSpeed > maxWindSpeed) {
         maxWindSpeed = reading.windSpeed;
       }
 
-      if(reading.pressure > maxPressure){
+      if (reading.pressure > maxPressure) {
         maxPressure = reading.pressure;
       }
     }
     const maxResult = {
       maxTemperature: maxTemperature,
       maxWindSpeed: maxWindSpeed,
-      maxPressure: maxPressure
-    }
-    
-    //console.log("Max:", maxResult);
+      maxPressure: maxPressure,
+    };
     return maxResult;
   },
 
-  getMin(readings){
+  getMin(readings) {
     let minTemperature = _.first(readings).temperature;
     let minWindSpeed = _.first(readings).windSpeed;
     let minPressure = _.first(readings).pressure;
 
-    for(const reading of readings){
-      if(reading.temperature < minTemperature){
+    for (const reading of readings) {
+      if (reading.temperature < minTemperature) {
         minTemperature = reading.temperature;
       }
 
-      if(reading.windSpeed < minWindSpeed){
+      if (reading.windSpeed < minWindSpeed) {
         minWindSpeed = reading.windSpeed;
       }
 
-      if(reading.pressure < minPressure){
+      if (reading.pressure < minPressure) {
         minPressure = reading.pressure;
       }
     }
     const minResult = {
       minTemperature: minTemperature,
       minWindSpeed: minWindSpeed,
-      minPressure: minPressure
-    }
-    
-    //console.log("Min", minResult);
+      minPressure: minPressure,
+    };
     return minResult;
   },
 
-  getTrends(readings){
-
+  getTrends(readings, trendToAnalyse) {
     if (readings.length >= 3) {
-      readings = readings.slice(-3)
+      readings = readings.slice(-3);
 
-      if (tempTrend > parseFloat(readings[0].temperature) && parseFloat(readings[2].trendToAnalyse) > tempTrend){
+      const trendControl = readings[1][trendToAnalyse];
+      
+      if (
+        trendControl > parseFloat(readings[0][trendToAnalyse]) &&
+        parseFloat(readings[2][trendToAnalyse]) > trendControl
+      ) {
         return "arrow up icon";
       }
 
-      if (tempTrend < parseFloat(readings[0].trendToAnalyse) && parseFloat(readings[2].trendToAnalyse) < tempTrend){
-        console.log()
+      if (
+        trendControl < parseFloat(readings[0][trendToAnalyse]) &&
+        parseFloat(readings[2][trendToAnalyse]) < trendControl
+      ) {
         return "arrow down icon";
       }
-
-      return null
+      return null;
     }
   },
-
-
 };
 
 module.exports = weatherAnalytics;

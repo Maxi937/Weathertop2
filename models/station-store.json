@@ -33,6 +33,24 @@
           "windSpeed": 1,
           "pressure": 1005,
           "windDirection": 101
+        },
+        {
+          "id": "c2b5da90-26d9-11ed-a486-d12d50e670e3",
+          "date": "2022-08-28T14:00:23.480Z",
+          "code": "500",
+          "temperature": "8.0",
+          "windSpeed": "3.5",
+          "pressure": "800",
+          "windDirection": "240"
+        },
+        {
+          "id": "d8e92470-26d9-11ed-a486-d12d50e670e3",
+          "date": "2022-08-28T14:01:00.727Z",
+          "code": "100",
+          "temperature": "6.0",
+          "windSpeed": "8.5",
+          "pressure": "300",
+          "windDirection": "360"
         }
       ]
     },

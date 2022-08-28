@@ -33,7 +33,7 @@
         Temp
       </h2>
       <p>
-        <i class="right floated big blue {{tempTrend}}"></i>
+        <i class="right floated big blue {{temperatureTrend}}"></i>
         {{temperature}} C 
         <br>
         {{farenheit}} F 
@@ -52,7 +52,7 @@
         Wind
       </h2>
       <p>
-        <i class="right floated big green ${station.getTrendAnalysis('windSpeed')}"></i>
+        <i class="right floated big green {{windSpeedTrend}}"></i>
         {{beaufort}} bft 
         <br>
         {{windDirection}} 
@@ -75,7 +75,7 @@
         Pressure
       </h2>
       <p>
-        <i class="right floated big orange ${station.getTrendAnalysis('windPressure')}"></i>
+        <i class="right floated big orange {{pressureTrend}}"></i>
         {{pressure}} hpa 
         <br>
         Max: {{maxPressure}}
