@@ -1,0 +1,29 @@
+<tbody>
+  <tr>
+    <td>
+      {{name}}
+    </td>
+
+    {{#with weatherReport}}
+    <td class="center aligned">
+      <i class="big red fitted {{weatherIcon}}"></i><br>
+      <span class="ui tiny text">{{weather}}</span>
+    </td>
+    <td class="center aligned">
+      <i class="big blue fitted thermometer icon"></i>
+      <br>
+      <span class="ui tiny text">{{temperature}} C</span>
+    </td>
+    <td class="center aligned">
+      <i class="big green wind icon"></i> <br>
+      <span class="ui tiny text">{{windSpeed}} KmHr</span>
+    </td>
+    <td class="right aligned">
+      <a href="/station/{{../id}}">
+        <i class="bordered grey large link folder icon"></i>
+      </a>
+    </td>
+    {{/with}}
+  </tr>
+</tbody>
+

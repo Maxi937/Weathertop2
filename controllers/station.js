@@ -8,6 +8,7 @@ const accounts = require("./accounts.js")
 
 const station = {
   index(request, response) {
+    logger.info("station rendering");
     const stationId = request.params.id;
     const station = stationStore.getStation(stationId);
     const weatherReport = weatherAnalytics.generateWeatherReport(station);
@@ -20,7 +21,7 @@ const station = {
       title: station.name + " Station",
       station: station,
       weatherReport: weatherReport,
-      loggedInUser: loggedInUser.firstName
+      loggedInUser: loggedInUser
     };
     response.render("station", viewData);
   },

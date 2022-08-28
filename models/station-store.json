@@ -136,6 +136,14 @@
           "windDirection": "252"
         }
       ]
+    },
+    {
+      "id": "f3879500-26f7-11ed-8775-adde02861a1b",
+      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Waterford",
+      "latitude": "-100",
+      "longitude": "250",
+      "readings": []
     }
   ]
 }

@@ -1,3 +1,5 @@
+
+{{#if ./loggedInUser}}
 <nav class="ui menu">
     <header class="ui header item"><a href="/dashboard"> WeatherTop </a></header>
 
@@ -8,13 +10,20 @@
  
 
     <div class="right menu">
+      
         <a id="dashboard" class="item" href="/dashboard"> Dashboard </a>
         <a id="about" class="item" href="/about"> About </a>
-        <a id="member" class="item" href="/member"> {{./loggedInUser}} </a>
+        <a id="user" class="item" href="/user"> {{./loggedInUser.firstName}}</a>
         <a id="logout" class="item" href="/logout"> Logout </a>
+      
+
     </div>
 </nav>
 
 <script>
     $("#${_id}").addClass("active item");
 </script>
+
+{{else}}
+  {{> welcome-menu}}
+{{/if}}

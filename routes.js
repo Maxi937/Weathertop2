@@ -7,6 +7,7 @@ const dashboard = require("./controllers/dashboard.js");
 const about = require("./controllers/about.js");
 const station = require("./controllers/station.js");
 const accounts = require("./controllers/accounts.js")
+const user = require("./controllers/user.js")
 
 
 //Accounts
@@ -17,8 +18,10 @@ router.get("/logout", accounts.logout);
 router.post("/register", accounts.register);
 router.post("/authenticate", accounts.authenticate);
 
-//Member -----TODO:change to redirect to member
-router.get("/member", dashboard.index)
+//User
+router.get("/user", user.index)
+router.get("/user/edituserdetails", user.editUserDetails)
+router.post("/user/updateuserdetails", user.updateUserDetails)
 
 //About
 router.get("/about", about.index);

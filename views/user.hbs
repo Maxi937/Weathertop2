@@ -1,0 +1,56 @@
+{{> menu id='member' }}
+
+{{#with loggedInUser}}
+<div class="ui segment">
+  <div class="ui two column grid">
+    <div class="column">
+      <div class="ui segment">
+        <div class="ui top attached blue label">First Name</div>
+        <p>
+          {{firstName}}
+        </p>
+      </div>
+
+      <div class="ui segment">
+        <div class="ui top attached blue label">Surname</div>
+        <p>
+          {{lastName}}
+        </p>
+      </div>
+
+      <div class="ui segment">
+        <div class="ui top attached blue label">Email</div>
+        <p>
+          {{email}}
+        </p>
+      </div>
+    </div>
+{{/with}}
+    <div class="column">
+      <table class="ui fixed table">
+        <thead>
+          <tr>
+            <th class="four wide">Station</th>
+            <th class="center aligned">Weather</th>
+            <th class="center aligned">Temp</th>
+            <th class="center aligned">Wind</th>
+            <th></th>
+          </tr>
+          {{#each stations}}
+            {{#if readings}}
+              {{> user-station-readings weatherReport = (lookup ../weatherReports @index)}}
+            {{/if}}
+          {{/each}}
+        </thead>
+        </table>
+    </div>
+  </div>
+
+  <div class="ui segment">
+    <a href="/user/edituserdetails">
+      <button class="ui blue submit button">Edit Details</button>
+    </a>
+  </div>
+</div>
+
+
