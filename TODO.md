@@ -1,9 +1,9 @@
 # TODO
 
-- Release 2 features:
-  lat & long
-  Accounts
-  members
+- Make Release 3
 
-- view:
-  Marry the templates
+- Add Error Checking on entries into HTML forms
+
+- Refactor MinMax to be better
+
+- Possibel UI changes
