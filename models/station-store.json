@@ -152,7 +152,17 @@
       "name": "Antrim",
       "latitude": "400.8888787",
       "longitude": "90.555",
-      "readings": []
+      "readings": [
+        {
+          "id": "a7c23e10-27cc-11ed-a9b7-a51afe538118",
+          "date": "2022-08-29T18:59:05.968Z",
+          "code": "200",
+          "temperature": "7.5",
+          "windSpeed": "8.5",
+          "pressure": "1004",
+          "windDirection": "180"
+        }
+      ]
     }
   ]
 }
