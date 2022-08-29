@@ -145,6 +145,14 @@
           "windDirection": "252"
         }
       ]
+    },
+    {
+      "id": "7577e830-27c0-11ed-a970-67e0b4ec59dd",
+      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Antrim",
+      "latitude": "400.8888787",
+      "longitude": "90.555",
+      "readings": []
     }
   ]
 }

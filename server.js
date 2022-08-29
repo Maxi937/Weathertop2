@@ -25,7 +25,9 @@ const routes = require("./routes");
 app.use("/", routes);
 
 //Let app see Public Folder so Images can be served
-app.use(express.static("./public/"));
+app.use(express.static("./static/"));
+
+
 
 
 const listener = app.listen(process.env.PORT || 4000, function() {

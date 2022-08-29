@@ -17,8 +17,8 @@ const station = {
     //  Make this like how the date and time are handled, becuase this is changing the JSON file --
     //  If addReading is called it saves the JSON and temp changes to the data while the program --
     //  is running get saved, such as the lat and long here:
-    station.latitude = Number(station.latitude).toFixed(2);
-    station.longitude = Number(station.longitude).toFixed(2);
+    //station.latitude = Number(station.latitude).toFixed(2);
+    //station.longitude = Number(station.longitude).toFixed(2);
 
     const viewData = {
       title: station.name + " Station",
