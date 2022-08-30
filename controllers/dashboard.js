@@ -5,6 +5,8 @@ const uuid = require("uuid");
 const stationStore = require("../models/station-store");
 const weatherAnalytics = require("../utils/weather-analytics");
 const accounts = require("./accounts.js")
+const axios = require("../utils/axios-api.js");
+const apiRequests = require("../utils/axios-api.js");
 
 const dashboard = {
   index(request, response) {
@@ -12,6 +14,9 @@ const dashboard = {
     const loggedInUser = accounts.getCurrentUser(request);
     const stations = stationStore.getUserStations(loggedInUser.id);
     const weatherReports = weatherAnalytics.generateMultiWeatherReports(stations);
+
+    //axios test
+    weatherAnalytics.generateAutoReading();
 
     const viewData = {
       title: "Dashboard",

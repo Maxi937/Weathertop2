@@ -3,6 +3,7 @@
 const weatherAnalyticsStore = require("../utils/weather-analytics-store.json");
 const logger = require("./logger");
 const _ = require("lodash");
+const axiosApi = require("./axios-api")
 
 //Maybe just take in station.readings instead of taking in station
 const weatherAnalytics = {
@@ -173,6 +174,14 @@ const weatherAnalytics = {
       return null;
     }
   },
+
+ generateAutoReading(){
+    const apiResponse = axiosApi.getAutoReading(52.16, -7.15);
+
+    console.log("l222222222:", apiResponse)
+
+
+  }
 };
 
 module.exports = weatherAnalytics;
