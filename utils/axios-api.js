@@ -3,8 +3,8 @@
 const axios = require("axios");
 
 const apiRequests = {
-  async getAutoReading(lat, lon) {
-    axios({
+  getAutoReading(lat, lon) {
+   const response = axios({
       method: "get",
       url: "https://api.openweathermap.org/data/2.5/weather?",
       params: {
@@ -14,13 +14,17 @@ const apiRequests = {
       },
     })
       .then(function (response) {
-        console.log(response.data);
+        console.log("OpenWeatherApi: Successful Call");
         return response.data 
       })
       .catch(function (response) {
-        console.log(response);
+        console.log("Bad Call: ", response.code);
+        return response.response.data 
       });
+      return response
   },
+
+  
 };
 
 module.exports = apiRequests;

@@ -15,9 +15,6 @@ const dashboard = {
     const stations = stationStore.getUserStations(loggedInUser.id);
     const weatherReports = weatherAnalytics.generateMultiWeatherReports(stations);
 
-    //axios test
-    weatherAnalytics.generateAutoReading();
-
     const viewData = {
       title: "Dashboard",
       stations: stations,
