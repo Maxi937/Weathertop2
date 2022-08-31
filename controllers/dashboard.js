@@ -5,8 +5,6 @@ const uuid = require("uuid");
 const stationStore = require("../models/station-store");
 const weatherAnalytics = require("../utils/weather-analytics");
 const accounts = require("./accounts.js")
-const axios = require("../utils/axios-api.js");
-const apiRequests = require("../utils/axios-api.js");
 
 const dashboard = {
   index(request, response) {

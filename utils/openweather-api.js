@@ -23,8 +23,6 @@ const apiRequests = {
       });
       return response
   },
-
-  
 };
 
 module.exports = apiRequests;

@@ -114,15 +114,6 @@
           "windSpeed": 4.63,
           "pressure": 1024,
           "windDirection": 90
-        },
-        {
-          "id": "aab4be70-295e-11ed-9eaf-73530a412eca",
-          "date": "2022-08-31T18:56:48.599Z",
-          "code": 800,
-          "temperature": 291.59,
-          "windSpeed": 3.6,
-          "pressure": 1024,
-          "windDirection": 80
         }
       ]
     },

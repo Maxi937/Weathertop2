@@ -5,7 +5,7 @@ const stationStore = require("../models/station-store");
 const weatherAnalytics = require("../utils/weather-analytics")
 const uuid = require("uuid");
 const accounts = require("./accounts.js");
-const axiosApi = require("../utils/axios-api")
+const openWeatherApi = require("../utils/openweather-api")
 
 
 const station = {
@@ -45,7 +45,6 @@ const station = {
   deleteReading(request, response) {
     const stationId = request.params.id;
     const readingId = request.params.readingId;
-    logger.debug(`Deleting Song ${readingId} from Playlist ${stationId}`);
     stationStore.removeReading(stationId, readingId);
     response.redirect("/station/" + stationId);
   },
@@ -58,7 +57,7 @@ const station = {
     const stationId = request.params.id;
     const station = stationStore.getStation(stationId);
 
-    const openWeatherReading = await axiosApi.getAutoReading(station.latitude, station.longitude)
+    const openWeatherReading = await openWeatherApi.getAutoReading(station.latitude, station.longitude)
 
     try {
       const newReading = {
