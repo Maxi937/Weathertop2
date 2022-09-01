@@ -81,6 +81,24 @@
             "description": "broken clouds",
             "icon": "04d"
           }
+        },
+        {
+          "id": "342deeb0-2a27-11ed-a5db-19281e24073a",
+          "date": "2022-09-01T18:52:18.587Z",
+          "code": "200",
+          "temperature": "8.0",
+          "windSpeed": "2.5",
+          "pressure": "1004",
+          "windDirection": "240"
+        },
+        {
+          "id": "478edeb0-2a27-11ed-a5db-19281e24073a",
+          "date": "2022-09-01T18:52:51.099Z",
+          "code": "300",
+          "temperature": "8.0",
+          "windSpeed": "1.5",
+          "pressure": "1002",
+          "windDirection": "88"
         }
       ]
     },

@@ -15,11 +15,11 @@ const apiRequests = {
       },
     })
       .then(function (response) {
-        console.log("OpenWeatherApi: Successful Call", response.data.weather);
+        console.log("OpenWeatherApi: Successful Call");
         return response.data 
       })
       .catch(function (response) {
-        console.log("Bad Call: ", response.code);
+        console.log("OpenWeatherApi: Bad Call");
         return response.response.data 
       });
       return response

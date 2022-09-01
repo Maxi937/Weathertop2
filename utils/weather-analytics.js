@@ -27,10 +27,10 @@ const weatherAnalytics = {
         minWindSpeed: minReadings.minWindSpeed,
         minPressure: minReadings.minPressure,
 
-        //case for auto Reading
+        //Case for auto Reading
         weather: this.getWeather(reading),
 
-        // Dynamic from Reading input
+        //Dynamic from Reading input
         farenheit: this.getTempAsFaren(reading.temperature),
         beaufort: this.getBeaufort(reading.windSpeed),
         windDirection: this.getWindDirection(reading.windDirection),
