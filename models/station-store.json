@@ -53,13 +53,34 @@
           "windDirection": "360"
         },
         {
-          "id": "28d90f30-295b-11ed-934b-753b1a14342d",
-          "date": "2022-08-31T18:31:42.243Z",
-          "code": 800,
-          "temperature": 292.59,
-          "windSpeed": 4.63,
-          "pressure": 1024,
-          "windDirection": 90
+          "id": "3be44bc0-2a24-11ed-8080-433ef5828344",
+          "date": "2022-09-01T18:31:03.036Z",
+          "code": 803,
+          "temperature": 18.12,
+          "windSpeed": 4.12,
+          "pressure": 1019,
+          "windDirection": 40,
+          "autoWeatherData": {
+            "id": 803,
+            "main": "Clouds",
+            "description": "broken clouds",
+            "icon": "04d"
+          }
+        },
+        {
+          "id": "38952b50-2a25-11ed-801e-0796f6974592",
+          "date": "2022-09-01T18:38:06.981Z",
+          "code": 803,
+          "temperature": 18.12,
+          "windSpeed": 4.12,
+          "pressure": 1019,
+          "windDirection": 40,
+          "autoWeatherData": {
+            "id": 803,
+            "main": "Clouds",
+            "description": "broken clouds",
+            "icon": "04d"
+          }
         }
       ]
     },

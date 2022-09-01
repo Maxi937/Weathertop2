@@ -4,13 +4,13 @@ const weatherAnalyticsStore = require("../utils/weather-analytics-store.json");
 const logger = require("./logger");
 const _ = require("lodash");
 
-//Maybe just take in station.readings instead of taking in station
+
 const weatherAnalytics = {
-  generateWeatherReport(station) {
-    if (station.readings.length > 0) {
-      const maxReadings = this.getMax(station.readings);
-      const minReadings = this.getMin(station.readings);
-      const reading = _.last(station.readings);
+  generateWeatherReport(readings) {
+    if (readings.length > 0) {
+      const maxReadings = this.getMax(readings);
+      const minReadings = this.getMin(readings);
+      const reading = _.last(readings);
 
       const weatherReport = {
         // Static from Reading input
@@ -27,33 +27,45 @@ const weatherAnalytics = {
         minWindSpeed: minReadings.minWindSpeed,
         minPressure: minReadings.minPressure,
 
+        //case for auto Reading
+        weather: this.getWeather(reading),
+
         // Dynamic from Reading input
         farenheit: this.getTempAsFaren(reading.temperature),
-        weather: this.getWeather(reading.code).weather,
-        weatherIcon: this.getWeather(reading.code).icon,
         beaufort: this.getBeaufort(reading.windSpeed),
         windDirection: this.getWindDirection(reading.windDirection),
         windChill: this.getWindChill(reading.temperature, reading.windSpeed),
 
         //Trends
-        temperatureTrend: this.getTrends(station.readings, "temperature"),
-        windSpeedTrend: this.getTrends(station.readings, "windSpeed"),
-        pressureTrend: this.getTrends(station.readings, "pressure"),
+        temperatureTrend: this.getTrends(readings, "temperature"),
+        windSpeedTrend: this.getTrends(readings, "windSpeed"),
+        pressureTrend: this.getTrends(readings, "pressure"),
       };
       return weatherReport;
     }
-    return null
+    return null;
   },
 
-  getWeather(code) {
+  getWeather(reading) {
+    const weatherCode = reading.code;
     const weatherStore = weatherAnalyticsStore.weatherCodes;
 
     for (let i = 0; i < weatherStore.length; i++) {
-      if (code == weatherStore[i].code) {
-        return weatherStore[i];
+      if (weatherCode == weatherStore[i].code) {
+        const weather = {
+          code: weatherCode,
+          weather: weatherStore[i].weather,
+          icon: weatherStore[i].icon,
+        };
+        return weather;
       }
     }
-    return null;
+    const weather = {
+      code: reading.autoWeatherData.id,
+      weather: reading.autoWeatherData.main,
+      icon: null,
+    };
+    return weather;
   },
 
   getBeaufort(windSpeed) {
@@ -94,7 +106,7 @@ const weatherAnalytics = {
     const weatherReportList = [];
 
     for (const station of stations) {
-      let weatherReport = this.generateWeatherReport(station);
+      let weatherReport = this.generateWeatherReport(station.readings);
       weatherReportList.push(weatherReport);
     }
     return weatherReportList;
@@ -157,7 +169,7 @@ const weatherAnalytics = {
       readings = readings.slice(-3);
 
       const trendControl = readings[1][trendToAnalyse];
-      
+
       if (
         trendControl > parseFloat(readings[0][trendToAnalyse]) &&
         parseFloat(readings[2][trendToAnalyse]) > trendControl

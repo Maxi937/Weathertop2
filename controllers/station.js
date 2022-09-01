@@ -13,7 +13,7 @@ const station = {
     logger.info("station rendering");
     const stationId = request.params.id;
     const station = stationStore.getStation(stationId);
-    const weatherReport = weatherAnalytics.generateWeatherReport(station);
+    const weatherReport = weatherAnalytics.generateWeatherReport(station.readings);
     const loggedInUser = accounts.getCurrentUser(request);
 
     const viewData = {
@@ -52,7 +52,6 @@ const station = {
   //Will not add a reading on error, will print reason for failure to console
   //Can pull the error code out of the api request and handle in specific way
   //Antrim always fail because latitude is out of bounds
-  //TODO: Need to find what measurement temperature is in and convert it, its not correct for celsius
   async addAutoReading(request, response) {
     const stationId = request.params.id;
     const station = stationStore.getStation(stationId);
@@ -68,6 +67,7 @@ const station = {
         windSpeed: openWeatherReading.wind.speed,
         pressure: openWeatherReading.main.pressure,
         windDirection: openWeatherReading.wind.deg,
+        autoWeatherData: openWeatherReading.weather[0]
       }
       console.log("new Reading: ", newReading)
       stationStore.addReading(stationId, newReading);

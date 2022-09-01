@@ -11,10 +11,11 @@ const apiRequests = {
         lat: lat,
         lon: lon,
         appid: "2984054b61dde353e5a927e8eff343a1",
+        units: "metric"
       },
     })
       .then(function (response) {
-        console.log("OpenWeatherApi: Successful Call");
+        console.log("OpenWeatherApi: Successful Call", response.data.weather);
         return response.data 
       })
       .catch(function (response) {
