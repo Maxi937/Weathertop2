@@ -60,6 +60,9 @@ const weatherAnalytics = {
         return weather;
       }
     }
+
+    /* Assumption: if none of the readings in the JSON, must be an auto reading - else critical error 
+    as input will not be able to take anything else */
     const weather = {
       code: reading.autoWeatherData.id,
       weather: reading.autoWeatherData.main,
