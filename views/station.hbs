@@ -10,6 +10,7 @@
             {{/if}}
         {{/with}}
     </section>
+    <section id="chart"></section>
 
     <section class="ui vertical segment">
         {{#if station.readings}}
@@ -20,6 +21,12 @@
      <section class="ui vertical segment">
         {{> add-reading}}
     </section>
+
+   <script src="../scripts/charts.js" type="module">
+     generateStationChart()
+   </script>
+      
+    
 </section>
 
 

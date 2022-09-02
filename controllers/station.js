@@ -7,7 +7,6 @@ const uuid = require("uuid");
 const accounts = require("./accounts.js");
 const openWeatherApi = require("../utils/openweather-api")
 
-
 const station = {
   index(request, response) {
     logger.info("station rendering");
@@ -20,7 +19,7 @@ const station = {
       title: station.name + " Station",
       station: station,
       weatherReport: weatherReport,
-      loggedInUser: loggedInUser
+      loggedInUser: loggedInUser,
     };
     response.render("station", viewData);
   },
