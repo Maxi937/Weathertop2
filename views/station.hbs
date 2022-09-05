@@ -22,8 +22,29 @@
         {{> add-reading}}
     </section>
 
-   <script src="../scripts/charts.js" type="module">
-     generateStationChart()
+
+
+   <script>
+      data = {
+      labels: [
+      {{#each trendLabels}}
+          "{{this}}",
+      {{/each}}
+      ],
+      datasets: [
+        { 
+          name: "Temperature", 
+          type: "line",
+          values: [{{tempTrendData}}] 
+          }
+        ]
+      };
+      new frappe.Chart("#chart", {
+        title: "Temperature Trend",
+        data: data,
+        type: "line",
+        height: 250
+      });
    </script>
       
     

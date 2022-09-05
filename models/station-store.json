@@ -128,13 +128,19 @@
           "windDirection": "180"
         },
         {
-          "id": "5f2de740-295b-11ed-93b7-81ec72d3a4de",
-          "date": "2022-08-31T18:33:13.396Z",
-          "code": 800,
-          "temperature": 292.25,
-          "windSpeed": 4.63,
-          "pressure": 1024,
-          "windDirection": 90
+          "id": "d7fba850-2d49-11ed-8b05-a1c9667dc69e",
+          "date": "2022-09-05T18:37:49.781Z",
+          "code": 802,
+          "temperature": 17.4,
+          "windSpeed": 8.75,
+          "pressure": 1004,
+          "windDirection": 180,
+          "autoWeatherData": {
+            "id": 802,
+            "main": "Clouds",
+            "description": "scattered clouds",
+            "icon": "03d"
+          }
         }
       ]
     },
