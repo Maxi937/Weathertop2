@@ -10,8 +10,7 @@ const chart = {
   },
 
   createChart(dataLabels, dataSet){
-    console.log(dataSet)
-
+    //Have to parse labels, because label property only takes array elements that include a comma eg. "element,"
     const labels =  this.parseDataLabels(dataLabels)
 
     data = {
