@@ -23,7 +23,6 @@ function formatLatLong() {
 * would be in JSON Data on Reresh of page and when conversion ran again would error
 ***/
 function formatDate() {
-
   const dateOptions = {
     year: "numeric",
     month: "numeric",

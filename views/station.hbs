@@ -23,30 +23,16 @@
     </section>
 
 
+    <section id="Testchart"></section>
 
-   <script>
-      data = {
-      labels: [
-      {{#each trendLabels}}
-          "{{this}}",
-      {{/each}}
-      ],
-      datasets: [
-        { 
-          name: "Temperature", 
-          type: "line",
-          values: [{{tempTrendData}}] 
-          }
-        ]
-      };
-      new frappe.Chart("#chart", {
-        title: "Temperature Trend",
-        data: data,
-        type: "line",
-        height: 250
-      });
-   </script>
-      
+  <script>
+    const labels = [];
+    {{#each trendLabels}}
+      labels.push("{{this}}")
+    {{/each}}
+
+    chart.createChart(labels, [{{tempTrendData}}])
+  </script>
     
 </section>
 
