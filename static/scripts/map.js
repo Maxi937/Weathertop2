@@ -1,46 +1,41 @@
 "use strict";
 
-const mmap = {
-  createMap() {
-    //Create Map object and set view
-    var map = L.map("map").setView([51.505, -0.09], 13);
+const map = {
+  createMap(stations) {
+    //Create Map object and set view to Ireland Center
+    var map = L.map("map").setView([53.44, -7.50], 6);
 
     //sets the style of the Map
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
+      maxZoom: 10,
       attribution: "© OpenStreetMap",
     }).addTo(map);
 
-    //Add map marker
-    var marker = L.marker([51.5, -0.09]).addTo(map);
+    //Add map markers for each station
+    for (const station of stations){
+      var marker = L.marker([station.latitude, station.longitude]).addTo(map);
+      marker.bindPopup(`${station.name}`);
+    }
 
     //Add big red circle
-    var circle = L.circle([51.508, -0.11], {
+    /*var circle = L.circle([51.508, -0.11], {
       color: "red",
       fillColor: "#f03",
       fillOpacity: 0.5,
       radius: 500,
-    }).addTo(map);
+    }).addTo(map);*/
 
     //Add polygon shape
-    var polygon = L.polygon([
+    /*var polygon = L.polygon([
       [51.509, -0.08],
       [51.503, -0.06],
       [51.51, -0.047],
-    ]).addTo(map);
-
-    //Quick add popups
-    marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-    circle.bindPopup("I am a circle.");
-    polygon.bindPopup("I am a polygon.");
+    ]).addTo(map);*/
 
     //Adding popup Directly to Coord
-    var popup = L.popup().setLatLng([51.513, -0.09]).setContent("I am a standalone popup.").openOn(map);
+    //var popup = L.popup().setLatLng([51.513, -0.09]).setContent("I am a standalone popup.").openOn(map);
   },
 
-  testMe(){
-    console.log("testing")
-  }
 };
 
 /*On click event

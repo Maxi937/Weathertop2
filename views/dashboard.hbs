@@ -29,8 +29,15 @@
     {{> add-station}}
 </section>
 
-
-
 <script>
-  mmap.createMap()
+  const stations = []
+    {{#each stations}}
+      stations.push({
+        name: "{{name}}",
+        latitude: {{latitude}},
+        longitude: {{longitude}} 
+      })
+    {{/each}}
+
+  map.createMap(stations)
 </script>
