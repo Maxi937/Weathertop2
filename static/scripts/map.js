@@ -7,7 +7,7 @@ const map = {
 
     //sets the style of the Map
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 10,
+      maxZoom: 9,
       attribution: "© OpenStreetMap",
     }).addTo(map);
 
