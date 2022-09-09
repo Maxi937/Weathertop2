@@ -1,8 +1,8 @@
 # TODO
 
-- DEPLOY
-
-- Make Release 3
+- Trend Graph UI needs to be improved:
+  - Title is currently the name of the variable
+  - Button needs a color
 
 - Add Error Checking on entries into HTML forms
 

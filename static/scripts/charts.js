@@ -1,37 +1,44 @@
 
 const chart = {
-  parseDataLabels(dataLabels){
+  getLabels(readings){
     const labels = [];
 
-    for(const dataLabel of dataLabels){
-      labels.push(`${dataLabel},`) 
+    for(const reading of readings){
+      const date = new Date(reading.date)
+      labels.push(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`)
     }
     return labels
   },
 
-  createChart(dataLabels, dataSet){
-    //Have to parse labels, because label property only takes array elements that include a comma eg. "element,"
-    const labels =  this.parseDataLabels(dataLabels)
+  getDataSet(readings, chartToShow){
+    const dataSet = []
+
+    for (const reading of readings){
+      dataSet.push(reading[chartToShow])
+    }
+    //console.log(dataSet)
+    return dataSet
+  },
+
+  createChart(readings, chartToShow){
+    const labels =  this.getLabels(readings)
+    const dataSet = this.getDataSet(readings, chartToShow)
 
     data = {
       labels: labels,
       datasets: [
         { 
-          name: "Temperature", 
+          name: `${chartToShow}`, 
           type: "line",
           values: dataSet
           }
         ]
       };
       new frappe.Chart("#chart", {
-        title: "Temperature Trend",
+        title: `${chartToShow} Trend`,
         data: data,
         type: "line",
         height: 250
       });
   }
-
-
-
-
 }

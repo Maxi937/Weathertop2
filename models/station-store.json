@@ -81,6 +81,21 @@
             "description": "broken clouds",
             "icon": "04d"
           }
+        },
+        {
+          "id": "bc044eb0-3071-11ed-83fc-adff4279df77",
+          "date": "2022-09-09T19:00:56.220Z",
+          "code": 800,
+          "temperature": 18.33,
+          "windSpeed": 5.14,
+          "pressure": 1013,
+          "windDirection": 350,
+          "autoWeatherData": {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01n"
+          }
         }
       ]
     },

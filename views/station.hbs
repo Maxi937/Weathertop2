@@ -11,6 +11,12 @@
         {{/with}}
     </section>
     <section id="chart"></section>
+    <div class="ui animated button" tabindex="0" id="changeTrendButton">
+      <div class="visible content">Next Trend</div>
+      <div class="hidden content">
+        <i class="right arrow icon"></i>
+      </div>
+    </div>
 
     <section class="ui vertical segment">
         {{#if station.readings}}
@@ -22,16 +28,28 @@
         {{> add-reading}}
     </section>
 
-
-    <section id="Testchart"></section>
-
   <script>
-    const labels = [];
-    {{#each trendLabels}}
-      labels.push("{{this}}")
-    {{/each}}
+    const trendCharts = ["temperature","windSpeed", "pressure"];
+    const readings = {{{readings}}};
+    var chartToRender = 0;
+    
+    chart.createChart(readings,trendCharts[chartToRender])
 
-    chart.createChart(labels, [{{tempTrendData}}])
+    //Change Chart with button press
+    document.getElementById("changeTrendButton").onclick = function() {changeChart()};
+
+    function changeChart() {      
+      if (chartToRender >= trendCharts.length-1){
+        chartToRender = 0
+      }
+      else {
+        chartToRender = chartToRender + 1
+      }
+      //console.log(chartToRender)
+      chart.createChart(readings, trendCharts[chartToRender])
+      //Remove Focus so animation still works if scroll off
+      document.getElementById("changeTrendButton").blur();
+    }
   </script>
     
 </section>

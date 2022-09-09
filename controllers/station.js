@@ -17,20 +17,12 @@ const station = {
     const tempTrendData = []
     const trendLabels = []
 
-    //add data for trends
-    for (const reading of station.readings){
-      tempTrendData.push(reading.temperature);     
-      const date = new Date(reading.date)
-      trendLabels.push(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`)
-    }
-
     const viewData = {
       title: station.name + " Station",
       station: station,
       weatherReport: weatherReport,
       loggedInUser: loggedInUser,
-      trendLabels,
-      tempTrendData
+      readings: JSON.stringify(station.readings)
     };
     response.render("station", viewData);
   },
