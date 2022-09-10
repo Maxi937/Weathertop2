@@ -205,24 +205,6 @@
           "windDirection": "252"
         }
       ]
-    },
-    {
-      "id": "7577e830-27c0-11ed-a970-67e0b4ec59dd",
-      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "name": "Antrim",
-      "latitude": "56.8888787",
-      "longitude": "-8.555",
-      "readings": [
-        {
-          "id": "a7c23e10-27cc-11ed-a9b7-a51afe538118",
-          "date": "2022-08-29T18:59:05.968Z",
-          "code": "200",
-          "temperature": "7.5",
-          "windSpeed": "8.5",
-          "pressure": "1004",
-          "windDirection": "180"
-        }
-      ]
     }
   ]
 }

@@ -29,24 +29,28 @@
     </section>
 
   <script>
-    const trendCharts = ["temperature","windSpeed", "pressure"];
+    const chartLookup = [
+    {chart: "temperature", title: "Temperature"},
+    {chart: "windSpeed", title: "Wind Speed"}, 
+    {chart: "pressure", title: "Pressure"}
+    ];
+    
     const readings = {{{readings}}};
     var chartToRender = 0;
     
-    chart.createChart(readings,trendCharts[chartToRender])
+    chart.createChart(readings, chartLookup[chartToRender])
 
     //Change Chart with button press
     document.getElementById("changeTrendButton").onclick = function() {changeChart()};
 
     function changeChart() {      
-      if (chartToRender >= trendCharts.length-1){
+      if (chartToRender >= chartLookup.length-1){
         chartToRender = 0
       }
       else {
         chartToRender = chartToRender + 1
       }
-      //console.log(chartToRender)
-      chart.createChart(readings, trendCharts[chartToRender])
+      chart.createChart(readings, chartLookup[chartToRender])
       //Remove Focus so animation still works if scroll off
       document.getElementById("changeTrendButton").blur();
     }

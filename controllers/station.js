@@ -20,6 +20,7 @@ const station = {
     const viewData = {
       title: station.name + " Station",
       station: station,
+      readings: station.readings,
       weatherReport: weatherReport,
       loggedInUser: loggedInUser,
       readings: JSON.stringify(station.readings)
