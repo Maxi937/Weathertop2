@@ -24,6 +24,7 @@ const dashboard = {
 
   addStation(request, response) {
     const loggedInUser = accounts.getCurrentUser(request)
+    console.log(request.body)
     const newStation = {
       id: uuid.v1(),
       userId: loggedInUser.id,

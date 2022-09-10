@@ -14,16 +14,13 @@ const station = {
     const station = stationStore.getStation(stationId);
     const weatherReport = weatherAnalytics.generateWeatherReport(station.readings);
     const loggedInUser = accounts.getCurrentUser(request);
-    const tempTrendData = []
-    const trendLabels = []
 
     const viewData = {
       title: station.name + " Station",
       station: station,
-      readings: station.readings,
+      readings: JSON.stringify(station.readings),
       weatherReport: weatherReport,
       loggedInUser: loggedInUser,
-      readings: JSON.stringify(station.readings)
     };
     response.render("station", viewData);
   },
@@ -54,11 +51,9 @@ const station = {
 
   //Will not add a reading on error, will print reason for failure to console
   //Can pull the error code out of the api request and handle in specific way
-  //Antrim always fail because latitude is out of bounds
   async addAutoReading(request, response) {
     const stationId = request.params.id;
     const station = stationStore.getStation(stationId);
-
     const openWeatherReading = await openWeatherApi.getAutoReading(station.latitude, station.longitude)
 
     try {

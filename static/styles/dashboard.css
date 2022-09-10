@@ -1,0 +1,15 @@
+#map {
+  height: 300px;
+}
+
+.btn-link{
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 10px 0px 0px 0px;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+}

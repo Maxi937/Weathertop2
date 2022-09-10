@@ -96,6 +96,21 @@
             "description": "clear sky",
             "icon": "01n"
           }
+        },
+        {
+          "id": "837291d0-3128-11ed-b746-49ea25170db0",
+          "date": "2022-09-10T16:49:19.214Z",
+          "code": 800,
+          "temperature": 17.74,
+          "windSpeed": 3.09,
+          "pressure": 1018,
+          "windDirection": 160,
+          "autoWeatherData": {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01d"
+          }
         }
       ]
     },
@@ -156,6 +171,36 @@
             "description": "scattered clouds",
             "icon": "03d"
           }
+        },
+        {
+          "id": "ac322320-3113-11ed-8a32-411cc5df2971",
+          "date": "2022-09-10T14:20:08.146Z",
+          "code": 801,
+          "temperature": 19.16,
+          "windSpeed": 3.6,
+          "pressure": 1018,
+          "windDirection": 180,
+          "autoWeatherData": {
+            "id": 801,
+            "main": "Clouds",
+            "description": "few clouds",
+            "icon": "02d"
+          }
+        },
+        {
+          "id": "2e8f3230-3129-11ed-8f6e-8b5165a0a27c",
+          "date": "2022-09-10T16:54:06.291Z",
+          "code": 800,
+          "temperature": 17.78,
+          "windSpeed": 3.09,
+          "pressure": 1018,
+          "windDirection": 160,
+          "autoWeatherData": {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01d"
+          }
         }
       ]
     },
@@ -205,6 +250,30 @@
           "windDirection": "252"
         }
       ]
+    },
+    {
+      "id": "12d85250-3143-11ed-8596-1ffbf84d4e28",
+      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Dublin",
+      "latitude": "53.28",
+      "longitude": "-6.27",
+      "readings": []
+    },
+    {
+      "id": "603899e0-3145-11ed-8596-1ffbf84d4e28",
+      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Longford",
+      "latitude": "53.73",
+      "longitude": "-7.80",
+      "readings": []
+    },
+    {
+      "id": "79ada140-3145-11ed-8596-1ffbf84d4e28",
+      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Kildare",
+      "latitude": "53.16",
+      "longitude": "-6.91",
+      "readings": []
     }
   ]
 }

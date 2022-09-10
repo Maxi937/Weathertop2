@@ -2,7 +2,7 @@
 
 const axios = require("axios");
 
-const apiRequests = {
+const openWeatherApiRequests = {
   getAutoReading(lat, lon) {
    const response = axios({
       method: "get",
@@ -26,4 +26,4 @@ const apiRequests = {
   },
 };
 
-module.exports = apiRequests;
+module.exports = openWeatherApiRequests;

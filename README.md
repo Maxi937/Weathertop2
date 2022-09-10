@@ -16,3 +16,4 @@
 | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | <https://stackoverflow.com/questions/19300236/ccessing-a-json-property-string-using-a-variable> | Used for Trends - how to lookup JSON synamically                                                                                |
 | <https://bobbyhadz.com/blog/javascript-remove-focus-from-element>                               | arrow anim would not revert to "Next Trend" if scrolled off after clicking unless you clicked on something else to remove focus |
+| <https://esri.github.io/esri-leaflet/examples/reverse-geocoding.html>                           | Reverse geocode lat and long to pick up the county for adding station dynamically                                               |
