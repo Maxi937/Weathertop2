@@ -61,32 +61,33 @@ const weatherAnalytics = {
       }
     }
 
-    /* Assumption: if none of the readings in the JSON, must be an auto reading - else critical error 
-    as input will not be able to take anything else */
+    // Assumption: if none of the readings in the JSON, must be an auto reading
     const weather = {
       code: reading.autoWeatherData.id,
       weather: reading.autoWeatherData.main,
-      icon: null,
+      icon: reading.autoWeatherData.icon,
     };
     return weather;
   },
 
   getBeaufort(windSpeed) {
+    const windSpeedRounded = parseFloat(windSpeed).toFixed(0)
     const beaufortStore = weatherAnalyticsStore.beaufortScale;
 
-    for (let i = 0; i < beaufortStore.length; i++) {
-      if (windSpeed >= beaufortStore[i].min && windSpeed <= beaufortStore[i].max) {
-        return beaufortStore[i].beaufort;
+    for (const beaufortMeasurement of beaufortStore) {
+          console.log(`Min: ${beaufortMeasurement.min}, Max: ${beaufortMeasurement.max}`)
+      if (windSpeedRounded >= beaufortMeasurement.min && windSpeedRounded <= beaufortMeasurement.max) {
+        return beaufortMeasurement.beaufort;
       }
     }
     return null;
   },
 
   getTempAsFaren(temperature) {
-    return (temperature * 9) / 5 + 32;
+    const result = (temperature * 9) / 5 + 32
+    return result.toFixed(2);
   },
 
-  //Need Propper Error Checking instead of just returning North
   getWindDirection(windDirection) {
     const compassStore = weatherAnalyticsStore.compass;
 

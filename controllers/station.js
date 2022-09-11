@@ -22,6 +22,7 @@ const station = {
       weatherReport: weatherReport,
       loggedInUser: loggedInUser,
     };
+    console.log(weatherReport)
     response.render("station", viewData);
   },
 
@@ -67,6 +68,8 @@ const station = {
         windDirection: openWeatherReading.wind.deg,
         autoWeatherData: openWeatherReading.weather[0]
       }
+      newReading.autoWeatherData.icon = "orange first order",
+
       console.log("new Reading: ", newReading)
       stationStore.addReading(stationId, newReading);
     } catch (error) {

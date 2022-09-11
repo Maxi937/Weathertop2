@@ -252,14 +252,6 @@
       ]
     },
     {
-      "id": "12d85250-3143-11ed-8596-1ffbf84d4e28",
-      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "name": "Dublin",
-      "latitude": "53.28",
-      "longitude": "-6.27",
-      "readings": []
-    },
-    {
       "id": "603899e0-3145-11ed-8596-1ffbf84d4e28",
       "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "name": "Longford",
@@ -293,52 +285,107 @@
       ]
     },
     {
-      "id": "44f446f0-31d8-11ed-b5df-a381d38260e7",
+      "id": "625ca690-31ee-11ed-9ed1-23eaf8904ff0",
       "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "name": "Killinroan",
-      "latitude": "53.41",
-      "longitude": "-7.79",
-      "readings": []
-    },
-    {
-      "id": "59cad510-31da-11ed-b5df-a381d38260e7",
-      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "name": "Headford",
-      "latitude": "53.47",
-      "longitude": "-9.10",
+      "name": "Newbridge",
+      "latitude": "53.18",
+      "longitude": "-6.80",
       "readings": [
         {
-          "id": "637b7420-31da-11ed-b5df-a381d38260e7",
-          "date": "2022-09-11T14:02:36.002Z",
+          "id": "69e3aee0-31ee-11ed-9ed1-23eaf8904ff0",
+          "date": "2022-09-11T16:25:56.686Z",
           "code": 804,
-          "temperature": 15.05,
-          "windSpeed": 2.91,
-          "pressure": 1010,
-          "windDirection": 108,
+          "temperature": 18.44,
+          "windSpeed": 5.33,
+          "pressure": 1009,
+          "windDirection": 188,
           "autoWeatherData": {
             "id": 804,
             "main": "Clouds",
             "description": "overcast clouds",
-            "icon": "04d"
+            "icon": "orange first order"
+          }
+        },
+        {
+          "id": "3e8b44e0-31f0-11ed-bdd2-590c25aacc40",
+          "date": "2022-09-11T16:39:02.958Z",
+          "code": "400",
+          "temperature": "10",
+          "windSpeed": "11.5",
+          "pressure": "300",
+          "windDirection": "360"
+        },
+        {
+          "id": "49d21450-31f0-11ed-bdd2-590c25aacc40",
+          "date": "2022-09-11T16:39:21.878Z",
+          "code": "600",
+          "temperature": "6.0",
+          "windSpeed": "5",
+          "pressure": "300",
+          "windDirection": "252"
+        },
+        {
+          "id": "94395210-31f0-11ed-8122-4555cb58fce0",
+          "date": "2022-09-11T16:41:26.705Z",
+          "code": 804,
+          "temperature": 18.48,
+          "windSpeed": 5.32,
+          "pressure": 1009,
+          "windDirection": 195,
+          "autoWeatherData": {
+            "id": 804,
+            "main": "Clouds",
+            "description": "overcast clouds",
+            "icon": "orange first order"
+          }
+        },
+        {
+          "id": "9dc4b5e0-31f0-11ed-8122-4555cb58fce0",
+          "date": "2022-09-11T16:41:42.718Z",
+          "code": "600",
+          "temperature": "6.0",
+          "windSpeed": "11.5",
+          "pressure": "300",
+          "windDirection": "360"
+        },
+        {
+          "id": "b33b8d90-31f0-11ed-a0a4-b1a639c88e20",
+          "date": "2022-09-11T16:42:18.729Z",
+          "code": 804,
+          "temperature": 18.48,
+          "windSpeed": 5.32,
+          "pressure": 1009,
+          "windDirection": 195,
+          "autoWeatherData": {
+            "id": 804,
+            "main": "Clouds",
+            "description": "overcast clouds",
+            "icon": "orange first order"
           }
         }
       ]
     },
     {
-      "id": "e5fa36a0-31dc-11ed-a099-fba9a8a87f0c",
+      "id": "f0ded1c0-31f0-11ed-a0a4-b1a639c88e20",
       "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "name": "Midleton",
-      "latitude": "51.91",
-      "longitude": "-8.17",
+      "name": "Galway",
+      "latitude": "53.27",
+      "longitude": "-9.05",
       "readings": [
         {
-          "id": "48c1f2f0-31e7-11ed-9426-cd37717dbed3",
-          "date": "2022-09-11T15:34:54.623Z",
-          "code": "200",
-          "temperature": "9.0",
-          "windSpeed": "8.5",
-          "pressure": "1004",
-          "windDirection": "240"
+          "id": "f4dcb350-31f0-11ed-a0a4-b1a639c88e20",
+          "date": "2022-09-11T16:44:08.837Z",
+          "code": 804,
+          "temperature": 16.45,
+          "windSpeed": 1.15,
+          "pressure": 1008,
+          "windDirection": 216,
+          "autoWeatherData": {
+            "id": 804,
+            "main": "Clouds",
+            "description": "overcast clouds",
+            "icon": "orange first order"
+          }
         }
       ]
     }
