@@ -1,7 +1,5 @@
 "use strict";
 
-
-
 const map = {
   createMap(stations) {
     //Create Map object and set view to Ireland Center
@@ -22,7 +20,7 @@ const map = {
       var marker = L.marker([station.latitude, station.longitude]).addTo(map);
       marker.bindPopup(`
       <a class="ui label" id="mapLink" href="/station/${station.id}">
-        <i class="big ${station.weatherReport.icon} icon" id="mapLink-icon"></i> ${station.name}
+        <i class="big ${station.icon} icon" id="mapLink-icon"></i> ${station.name}
       </a>
       </div>
         `)

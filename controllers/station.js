@@ -22,7 +22,6 @@ const station = {
       weatherReport: weatherReport,
       loggedInUser: loggedInUser,
     };
-    console.log(weatherReport)
     response.render("station", viewData);
   },
 

@@ -12,14 +12,17 @@ const dashboard = {
     logger.info("dashboard rendering");
     const loggedInUser = accounts.getCurrentUser(request);
     const stations = stationStore.getUserStations(loggedInUser.id);
-    const weatherReports = weatherAnalytics.generateMultiWeatherReports(stations);
+
+    for (const station of stations){
+      station.weatherReport = weatherAnalytics.generateWeatherReport(station.readings)
+    }
 
     const viewData = {
       title: "Dashboard",
       stations: stations,
-      weatherReports: weatherReports,
       loggedInUser: loggedInUser
     };
+
     response.render("dashboard", viewData);
   },
 

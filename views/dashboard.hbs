@@ -4,7 +4,7 @@
     {{#each stations}}
         <section class="ui vertical segment">
             {{#if readings}}
-                {{> latest-station-reading weatherReport = (lookup ../weatherReports @index)}}
+                {{> latest-station-reading}}
             {{else}}
                 {{> empty-latest-reading-panel}}
             {{/if}}
@@ -31,25 +31,15 @@
 
 <script>
   const stationData = []
-  const weatherData = []
     {{#each stations}}
       stationData.push({
         id: "{{id}}",
         name: "{{name}}",
         latitude: {{latitude}},
         longitude: {{longitude}},
-      })
-    {{/each}}
-    {{#each weatherReports}}
-      weatherData.push({
-        icon: "{{weather.icon}}"
+        icon: "{{weatherReport.weather.icon}}"
       })
     {{/each}}
 
-  //Add weatherReport Data into stationData
-  for (let i=0; i<stationData.length;i++){
-    stationData[i].weatherReport = weatherData[i]
-    console.log(stationData[i])
-  }
   map.createMap(stationData)
 </script>

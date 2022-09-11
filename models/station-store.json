@@ -82,7 +82,31 @@
             "icon": "orange first order"
           }
         }
-      ]
+      ],
+      "weatherReport": {
+        "readingId": "773f7770-31f5-11ed-8870-45a1cd8e7ae7",
+        "temperature": 17.4,
+        "pressure": 1010,
+        "windSpeed": 7.72,
+        "maxTemperature": 18.12,
+        "maxWindSpeed": "8.5",
+        "maxPressure": 1019,
+        "minTemperature": 0.5,
+        "minWindSpeed": 1,
+        "minPressure": "300",
+        "weather": {
+          "code": 301,
+          "weather": "Drizzle",
+          "icon": "orange first order"
+        },
+        "farenheit": "63.32",
+        "beaufort": 2,
+        "windDirection": "South South West",
+        "windChill": "17.73",
+        "temperatureTrend": null,
+        "windSpeedTrend": null,
+        "pressureTrend": null
+      }
     },
     {
       "id": "05",
@@ -157,7 +181,31 @@
             "icon": "orange first order"
           }
         }
-      ]
+      ],
+      "weatherReport": {
+        "readingId": "7faa5010-31f5-11ed-8870-45a1cd8e7ae7",
+        "temperature": 17.55,
+        "pressure": 1010,
+        "windSpeed": 7.72,
+        "maxTemperature": 17.55,
+        "maxWindSpeed": "90",
+        "maxPressure": 1010,
+        "minTemperature": 0.5,
+        "minWindSpeed": 1,
+        "minPressure": "8",
+        "weather": {
+          "code": 301,
+          "weather": "Drizzle",
+          "icon": "orange first order"
+        },
+        "farenheit": "63.59",
+        "beaufort": 2,
+        "windDirection": "South South West",
+        "windChill": "17.91",
+        "temperatureTrend": "arrow up icon",
+        "windSpeedTrend": "arrow down icon",
+        "pressureTrend": "arrow up icon"
+      }
     },
     {
       "id": "0535edd0-2499-11ed-bf42-ffa5e0d5db60",
@@ -237,7 +285,28 @@
           "pressure": "800",
           "windDirection": "55"
         }
-      ]
+      ],
+      "weatherReport": {
+        "readingId": "36838af0-31dc-11ed-a099-fba9a8a87f0c",
+        "temperature": "10",
+        "pressure": "800",
+        "windSpeed": "4.5",
+        "maxTemperature": 14.51,
+        "maxWindSpeed": "4.5",
+        "maxPressure": 1010,
+        "minTemperature": "10",
+        "minWindSpeed": 2.82,
+        "minPressure": "800",
+        "weather": {
+          "code": "500",
+          "weather": "Heavy Showers",
+          "icon": "blue cloud showers heavy icon"
+        },
+        "farenheit": "50.00",
+        "beaufort": 1,
+        "windDirection": "North East",
+        "windChill": "9.92"
+      }
     },
     {
       "id": "625ca690-31ee-11ed-9ed1-23eaf8904ff0",
@@ -318,7 +387,56 @@
             "icon": "orange first order"
           }
         }
-      ]
+      ],
+      "weatherReport": {
+        "readingId": "b33b8d90-31f0-11ed-a0a4-b1a639c88e20",
+        "temperature": 18.48,
+        "pressure": 1009,
+        "windSpeed": 5.32,
+        "maxTemperature": 18.48,
+        "maxWindSpeed": "11.5",
+        "maxPressure": 1009,
+        "minTemperature": "10",
+        "minWindSpeed": 5.32,
+        "minPressure": "300",
+        "weather": {
+          "code": 804,
+          "weather": "Clouds",
+          "icon": "orange first order"
+        },
+        "farenheit": "65.26",
+        "beaufort": 1,
+        "windDirection": "South South West",
+        "windChill": "19.32",
+        "temperatureTrend": null,
+        "windSpeedTrend": null,
+        "pressureTrend": null
+      }
+    },
+    {
+      "id": "29ae9a40-3204-11ed-bb3b-bfbd6a4c5ce4",
+      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Ballinasloe",
+      "latitude": "53.33",
+      "longitude": "-8.22",
+      "readings": [
+        {
+          "id": "2b4f51f0-3204-11ed-bb3b-bfbd6a4c5ce4",
+          "date": "2022-09-11T19:01:40.623Z",
+          "code": 804,
+          "temperature": 16.93,
+          "windSpeed": 1.63,
+          "pressure": 1009,
+          "windDirection": 205,
+          "autoWeatherData": {
+            "id": 804,
+            "main": "Clouds",
+            "description": "overcast clouds",
+            "icon": "orange first order"
+          }
+        }
+      ],
+      "weatherReport": null
     }
   ]
 }

@@ -18,7 +18,12 @@ const stationStore = {
   },
 
   getUserStations(userId) {
-    return this.store.findBy(this.collection, { userId: userId });
+    const result = this.store.findBy(this.collection, { userId: userId })
+    
+    result.sort(function(a, b) {
+      return a.name.localeCompare(b.name);
+   });
+    return result;
   },
 
   addStation(station) {

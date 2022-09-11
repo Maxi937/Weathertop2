@@ -103,16 +103,6 @@ const weatherAnalytics = {
     return result.toFixed(2);
   },
 
-  generateMultiWeatherReports(stations) {
-    const weatherReportList = [];
-
-    for (const station of stations) {
-      let weatherReport = this.generateWeatherReport(station.readings);
-      weatherReportList.push(weatherReport);
-    }
-    return weatherReportList;
-  },
-
   getMax(readings) {
     let maxTemperature = 0;
     let maxWindSpeed = 0;
