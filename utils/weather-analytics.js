@@ -60,7 +60,6 @@ const weatherAnalytics = {
         return weather;
       }
     }
-
     // Assumption: if none of the readings in the JSON, must be an auto reading
     const weather = {
       code: reading.autoWeatherData.id,
@@ -75,7 +74,6 @@ const weatherAnalytics = {
     const beaufortStore = weatherAnalyticsStore.beaufortScale;
 
     for (const beaufortMeasurement of beaufortStore) {
-          console.log(`Min: ${beaufortMeasurement.min}, Max: ${beaufortMeasurement.max}`)
       if (windSpeedRounded >= beaufortMeasurement.min && windSpeedRounded <= beaufortMeasurement.max) {
         return beaufortMeasurement.beaufort;
       }

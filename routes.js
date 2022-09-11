@@ -36,5 +36,6 @@ router.get("/station/:id/addAutoReading", station.addAutoReading)
 router.get("/dashboard", dashboard.index);
 router.get("/dashboard/deletestation/:id", dashboard.deleteStation);
 router.post("/dashboard/addstation", dashboard.addStation);
+router.get("/dashboard/:id/addAutoReading", dashboard.addAutoReading)
 
 module.exports = router;

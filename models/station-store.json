@@ -68,48 +68,18 @@
           }
         },
         {
-          "id": "38952b50-2a25-11ed-801e-0796f6974592",
-          "date": "2022-09-01T18:38:06.981Z",
-          "code": 803,
-          "temperature": 18.12,
-          "windSpeed": 4.12,
-          "pressure": 1019,
-          "windDirection": 40,
+          "id": "773f7770-31f5-11ed-8870-45a1cd8e7ae7",
+          "date": "2022-09-11T17:16:25.575Z",
+          "code": 301,
+          "temperature": 17.4,
+          "windSpeed": 7.72,
+          "pressure": 1010,
+          "windDirection": 200,
           "autoWeatherData": {
-            "id": 803,
-            "main": "Clouds",
-            "description": "broken clouds",
-            "icon": "04d"
-          }
-        },
-        {
-          "id": "bc044eb0-3071-11ed-83fc-adff4279df77",
-          "date": "2022-09-09T19:00:56.220Z",
-          "code": 800,
-          "temperature": 18.33,
-          "windSpeed": 5.14,
-          "pressure": 1013,
-          "windDirection": 350,
-          "autoWeatherData": {
-            "id": 800,
-            "main": "Clear",
-            "description": "clear sky",
-            "icon": "01n"
-          }
-        },
-        {
-          "id": "837291d0-3128-11ed-b746-49ea25170db0",
-          "date": "2022-09-10T16:49:19.214Z",
-          "code": 800,
-          "temperature": 17.74,
-          "windSpeed": 3.09,
-          "pressure": 1018,
-          "windDirection": 160,
-          "autoWeatherData": {
-            "id": 800,
-            "main": "Clear",
-            "description": "clear sky",
-            "icon": "01d"
+            "id": 301,
+            "main": "Drizzle",
+            "description": "drizzle",
+            "icon": "orange first order"
           }
         }
       ]
@@ -173,33 +143,18 @@
           }
         },
         {
-          "id": "ac322320-3113-11ed-8a32-411cc5df2971",
-          "date": "2022-09-10T14:20:08.146Z",
-          "code": 801,
-          "temperature": 19.16,
-          "windSpeed": 3.6,
-          "pressure": 1018,
-          "windDirection": 180,
+          "id": "7faa5010-31f5-11ed-8870-45a1cd8e7ae7",
+          "date": "2022-09-11T17:16:39.697Z",
+          "code": 301,
+          "temperature": 17.55,
+          "windSpeed": 7.72,
+          "pressure": 1010,
+          "windDirection": 200,
           "autoWeatherData": {
-            "id": 801,
-            "main": "Clouds",
-            "description": "few clouds",
-            "icon": "02d"
-          }
-        },
-        {
-          "id": "2e8f3230-3129-11ed-8f6e-8b5165a0a27c",
-          "date": "2022-09-10T16:54:06.291Z",
-          "code": 800,
-          "temperature": 17.78,
-          "windSpeed": 3.09,
-          "pressure": 1018,
-          "windDirection": 160,
-          "autoWeatherData": {
-            "id": 800,
-            "main": "Clear",
-            "description": "clear sky",
-            "icon": "01d"
+            "id": 301,
+            "main": "Drizzle",
+            "description": "drizzle",
+            "icon": "orange first order"
           }
         }
       ]
@@ -356,54 +311,6 @@
           "windSpeed": 5.32,
           "pressure": 1009,
           "windDirection": 195,
-          "autoWeatherData": {
-            "id": 804,
-            "main": "Clouds",
-            "description": "overcast clouds",
-            "icon": "orange first order"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f0ded1c0-31f0-11ed-a0a4-b1a639c88e20",
-      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "name": "Galway",
-      "latitude": "53.27",
-      "longitude": "-9.05",
-      "readings": [
-        {
-          "id": "f4dcb350-31f0-11ed-a0a4-b1a639c88e20",
-          "date": "2022-09-11T16:44:08.837Z",
-          "code": 804,
-          "temperature": 16.45,
-          "windSpeed": 1.15,
-          "pressure": 1008,
-          "windDirection": 216,
-          "autoWeatherData": {
-            "id": 804,
-            "main": "Clouds",
-            "description": "overcast clouds",
-            "icon": "orange first order"
-          }
-        }
-      ]
-    },
-    {
-      "id": "dde27a80-31f1-11ed-a0a4-b1a639c88e20",
-      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "name": "Charleville",
-      "latitude": "52.35",
-      "longitude": "-8.68",
-      "readings": [
-        {
-          "id": "7d378d40-31f3-11ed-bcb3-b78f283b28f4",
-          "date": "2022-09-11T17:02:16.596Z",
-          "code": 804,
-          "temperature": 19.94,
-          "windSpeed": 3.58,
-          "pressure": 999,
-          "windDirection": 198,
           "autoWeatherData": {
             "id": 804,
             "main": "Clouds",

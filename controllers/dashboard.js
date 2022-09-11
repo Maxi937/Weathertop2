@@ -5,6 +5,7 @@ const uuid = require("uuid");
 const stationStore = require("../models/station-store");
 const weatherAnalytics = require("../utils/weather-analytics");
 const accounts = require("./accounts.js")
+const openWeatherApi = require("../utils/openweather-api")
 
 const dashboard = {
   index(request, response) {
@@ -42,6 +43,33 @@ const dashboard = {
     stationStore.removeStation(stationId);
     response.redirect("/dashboard");
   },
+
+  async addAutoReading(request, response) {
+    const stationId = request.params.id;
+    const station = stationStore.getStation(stationId);
+    const openWeatherReading = await openWeatherApi.getAutoReading(station.latitude, station.longitude)
+
+    try {
+      const newReading = {
+        id: uuid.v1(),
+        date: new Date(),
+        code: openWeatherReading.weather[0].id,
+        temperature: openWeatherReading.main.temp,
+        windSpeed: openWeatherReading.wind.speed,
+        pressure: openWeatherReading.main.pressure,
+        windDirection: openWeatherReading.wind.deg,
+        autoWeatherData: openWeatherReading.weather[0]
+      }
+      newReading.autoWeatherData.icon = "orange first order",
+
+      console.log("new Reading: ", newReading)
+      stationStore.addReading(stationId, newReading);
+    } catch (error) {
+      console.log("Status Code: ", openWeatherReading.cod)
+      console.log("Message: ", openWeatherReading.message)
+    } 
+    response.redirect("/dashboard")
+  }
 };
 
 module.exports = dashboard;
