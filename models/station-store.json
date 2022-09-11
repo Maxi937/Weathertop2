@@ -434,9 +434,71 @@
             "description": "overcast clouds",
             "icon": "orange first order"
           }
+        },
+        {
+          "id": "1decf8b0-3208-11ed-bad5-1192d82c17dd",
+          "date": "2022-09-11T19:29:56.156Z",
+          "code": 804,
+          "temperature": 17.38,
+          "windSpeed": 2.24,
+          "pressure": 1008,
+          "windDirection": 252,
+          "autoWeatherData": {
+            "id": 804,
+            "main": "Clouds",
+            "description": "overcast clouds",
+            "icon": "orange first order"
+          }
+        },
+        {
+          "id": "236ee230-3208-11ed-bad5-1192d82c17dd",
+          "date": "2022-09-11T19:30:05.395Z",
+          "code": "300",
+          "temperature": "10",
+          "windSpeed": "3.5",
+          "pressure": "1006",
+          "windDirection": "252"
+        },
+        {
+          "id": "66cfe060-3208-11ed-bad5-1192d82c17dd",
+          "date": "2022-09-11T19:31:58.438Z",
+          "code": "600",
+          "temperature": "8.0",
+          "windSpeed": "2.5",
+          "pressure": "800",
+          "windDirection": "240"
+        },
+        {
+          "id": "76ae6060-3208-11ed-bad5-1192d82c17dd",
+          "date": "2022-09-11T19:32:25.062Z",
+          "code": "300",
+          "temperature": "8.0",
+          "windSpeed": "2.5",
+          "pressure": "800",
+          "windDirection": "240"
         }
       ],
-      "weatherReport": null
+      "weatherReport": {
+        "readingId": "2b4f51f0-3204-11ed-bb3b-bfbd6a4c5ce4",
+        "temperature": 16.93,
+        "pressure": 1009,
+        "windSpeed": 1.63,
+        "maxTemperature": 16.93,
+        "maxWindSpeed": 1.63,
+        "maxPressure": 1009,
+        "minTemperature": 16.93,
+        "minWindSpeed": 1.63,
+        "minPressure": 1009,
+        "weather": {
+          "code": 804,
+          "weather": "Clouds",
+          "icon": "orange first order"
+        },
+        "farenheit": "62.47",
+        "beaufort": 1,
+        "windDirection": "South South West",
+        "windChill": "18.61"
+      }
     }
   ]
 }

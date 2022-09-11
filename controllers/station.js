@@ -67,8 +67,6 @@ const station = {
         windDirection: openWeatherReading.wind.deg,
         autoWeatherData: openWeatherReading.weather[0]
       }
-      newReading.autoWeatherData.icon = "orange first order",
-
       console.log("new Reading: ", newReading)
       stationStore.addReading(stationId, newReading);
     } catch (error) {
