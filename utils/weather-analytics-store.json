@@ -117,7 +117,7 @@
     }
   ],
 
-  "compass":[
+  "compass": [
     {
       "min": 348.75,
       "max": 11.25,
@@ -198,5 +198,5 @@
       "max": 348.75,
       "direction": "North North West"
     }
-  ] 
+  ]
 }

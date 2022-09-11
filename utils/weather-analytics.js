@@ -4,7 +4,6 @@ const weatherAnalyticsStore = require("../utils/weather-analytics-store.json");
 const logger = require("./logger");
 const _ = require("lodash");
 
-
 const weatherAnalytics = {
   generateWeatherReport(readings) {
     if (readings.length > 0) {
@@ -70,7 +69,7 @@ const weatherAnalytics = {
   },
 
   getBeaufort(windSpeed) {
-    const windSpeedRounded = parseFloat(windSpeed).toFixed(0)
+    const windSpeedRounded = parseFloat(windSpeed).toFixed(0);
     const beaufortStore = weatherAnalyticsStore.beaufortScale;
 
     for (const beaufortMeasurement of beaufortStore) {
@@ -82,7 +81,7 @@ const weatherAnalytics = {
   },
 
   getTempAsFaren(temperature) {
-    const result = (temperature * 9) / 5 + 32
+    const result = (temperature * 9) / 5 + 32;
     return result.toFixed(2);
   },
 
