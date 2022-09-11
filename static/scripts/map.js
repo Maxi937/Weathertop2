@@ -33,7 +33,6 @@ const map = {
     function onMapClick(e) {
       clickMarker.remove(map);
       clickMarker = L.marker(e.latlng).addTo(map);
-      var testLat = e.latlng.lat
 
       geocodeService
         .reverse()
