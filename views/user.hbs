@@ -38,7 +38,7 @@
           </tr>
           {{#each stations}}
             {{#if readings}}
-              {{> user-station-readings weatherReport = (lookup ../weatherReports @index)}}
+              {{> user-station-readings}}
             {{/if}}
           {{/each}}
         </thead>

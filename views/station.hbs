@@ -42,6 +42,7 @@
 
     var chartToRender = 0;
     chart.createChart(readings, chartLookup[chartToRender])
+
     //Change Chart with button press
     document.getElementById("changeTrendButton").onclick = function () { changeChart() };
 
@@ -56,5 +57,4 @@
       document.getElementById("changeTrendButton").blur();  //Remove Focus so animation still works if scroll off
     }
   </script>
-
 </section>

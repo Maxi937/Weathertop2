@@ -10,20 +10,15 @@ const user = {
   index(request, response) {
     logger.info("user rendering");
     const loggedInUser = accounts.getCurrentUser(request);
-
     const stations = stationStore.getUserStations(loggedInUser.id);
-    const weatherReports = weatherAnalytics.generateMultiWeatherReports(stations);
-    console.log(weatherReports)
 
-    for (const station of stations) {
-      station.latitude = Number(station.latitude).toFixed(2);
-      station.longitude = Number(station.longitude).toFixed(2);
+    for (const station of stations){
+      station.weatherReport = weatherAnalytics.generateWeatherReport(station.readings)
     }
 
     const viewData = {
       title: loggedInUser.firstName + " " + loggedInUser.lastName,
       stations: stations,
-      weatherReports: weatherReports,
       loggedInUser: loggedInUser,
     };
     response.render("user", viewData);

@@ -17,7 +17,6 @@ const chart = {
     for (const reading of readings) {
       dataSet.push(reading[chartToShow]);
     }
-    //console.log(dataSet)
     return dataSet;
   },
 
