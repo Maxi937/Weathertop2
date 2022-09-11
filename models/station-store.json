@@ -388,6 +388,14 @@
           }
         }
       ]
+    },
+    {
+      "id": "dde27a80-31f1-11ed-a0a4-b1a639c88e20",
+      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Charleville",
+      "latitude": "52.35",
+      "longitude": "-8.68",
+      "readings": []
     }
   ]
 }
