@@ -30,14 +30,26 @@
 </section>
 
 <script>
-  const stations = []
+  const stationData = []
+  const weatherData = []
     {{#each stations}}
-      stations.push({
+      stationData.push({
+        id: "{{id}}",
         name: "{{name}}",
         latitude: {{latitude}},
-        longitude: {{longitude}} 
+        longitude: {{longitude}},
+      })
+    {{/each}}
+    {{#each weatherReports}}
+      weatherData.push({
+        icon: "{{weather.icon}}"
       })
     {{/each}}
 
-  map.createMap(stations)
+  //Add weatherReport Data into stationData
+  for (let i=0; i<stationData.length;i++){
+    stationData[i].weatherReport = weatherData[i]
+    console.log(stationData[i])
+  }
+  map.createMap(stationData)
 </script>

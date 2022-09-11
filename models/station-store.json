@@ -323,6 +323,24 @@
           }
         }
       ]
+    },
+    {
+      "id": "e5fa36a0-31dc-11ed-a099-fba9a8a87f0c",
+      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Midleton",
+      "latitude": "51.91",
+      "longitude": "-8.17",
+      "readings": [
+        {
+          "id": "48c1f2f0-31e7-11ed-9426-cd37717dbed3",
+          "date": "2022-09-11T15:34:54.623Z",
+          "code": "200",
+          "temperature": "9.0",
+          "windSpeed": "8.5",
+          "pressure": "1004",
+          "windDirection": "240"
+        }
+      ]
     }
   ]
 }

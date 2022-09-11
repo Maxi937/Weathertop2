@@ -13,3 +13,20 @@
   font-family: inherit;
   font-size: inherit;
 }
+
+#mapLink{
+  background-color: white;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:5px;
+}
+
+#mapLink-icon{
+  margin-right:7px;
+}
+
+#mapLink-text{
+  font-weight: bolder;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+}

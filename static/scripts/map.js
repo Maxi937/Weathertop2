@@ -20,8 +20,13 @@ const map = {
     //Add map markers for each station
     for (const station of stations) {
       var marker = L.marker([station.latitude, station.longitude]).addTo(map);
-      marker.bindPopup(`${station.name}`);
-    }
+      marker.bindPopup(`
+      <a class="ui label" id="mapLink" href="/station/${station.id}">
+        <i class="big ${station.weatherReport.icon} icon" id="mapLink-icon"></i> ${station.name}
+      </a>
+      </div>
+        `)
+      }
 
     //On click event
     var clickMarker = L.marker();
