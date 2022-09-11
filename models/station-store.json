@@ -265,15 +265,64 @@
       "name": "Longford",
       "latitude": "53.73",
       "longitude": "-7.80",
+      "readings": [
+        {
+          "id": "e9d9b030-31db-11ed-a099-fba9a8a87f0c",
+          "date": "2022-09-11T14:13:30.931Z",
+          "code": 804,
+          "temperature": 14.51,
+          "windSpeed": 2.82,
+          "pressure": 1010,
+          "windDirection": 91,
+          "autoWeatherData": {
+            "id": 804,
+            "main": "Clouds",
+            "description": "overcast clouds",
+            "icon": "04d"
+          }
+        },
+        {
+          "id": "36838af0-31dc-11ed-a099-fba9a8a87f0c",
+          "date": "2022-09-11T14:15:39.551Z",
+          "code": "500",
+          "temperature": "10",
+          "windSpeed": "4.5",
+          "pressure": "800",
+          "windDirection": "55"
+        }
+      ]
+    },
+    {
+      "id": "44f446f0-31d8-11ed-b5df-a381d38260e7",
+      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Killinroan",
+      "latitude": "53.41",
+      "longitude": "-7.79",
       "readings": []
     },
     {
-      "id": "79ada140-3145-11ed-8596-1ffbf84d4e28",
+      "id": "59cad510-31da-11ed-b5df-a381d38260e7",
       "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "name": "Kildare",
-      "latitude": "53.16",
-      "longitude": "-6.91",
-      "readings": []
+      "name": "Headford",
+      "latitude": "53.47",
+      "longitude": "-9.10",
+      "readings": [
+        {
+          "id": "637b7420-31da-11ed-b5df-a381d38260e7",
+          "date": "2022-09-11T14:02:36.002Z",
+          "code": 804,
+          "temperature": 15.05,
+          "windSpeed": 2.91,
+          "pressure": 1010,
+          "windDirection": 108,
+          "autoWeatherData": {
+            "id": 804,
+            "main": "Clouds",
+            "description": "overcast clouds",
+            "icon": "04d"
+          }
+        }
+      ]
     }
   ]
 }
