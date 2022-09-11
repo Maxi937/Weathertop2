@@ -395,7 +395,23 @@
       "name": "Charleville",
       "latitude": "52.35",
       "longitude": "-8.68",
-      "readings": []
+      "readings": [
+        {
+          "id": "7d378d40-31f3-11ed-bcb3-b78f283b28f4",
+          "date": "2022-09-11T17:02:16.596Z",
+          "code": 804,
+          "temperature": 19.94,
+          "windSpeed": 3.58,
+          "pressure": 999,
+          "windDirection": 198,
+          "autoWeatherData": {
+            "id": 804,
+            "main": "Clouds",
+            "description": "overcast clouds",
+            "icon": "orange first order"
+          }
+        }
+      ]
     }
   ]
 }
