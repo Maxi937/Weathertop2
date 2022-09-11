@@ -11,9 +11,15 @@ WeatherApp to log and track readings.
 <https://mysterious-waters-92129.herokuapp.com>
 
 ## Usage
+
 - Add Stations and then Update Readings manually.
-- Readings can be automatically generated via the button
+- Readings can be automatically generated via the button.
 - Stations can be added from the map by clicking on an area and following the prompt.
+
+## Known Issues
+
+- No validation on form entries
+- OpenWQeatherApi Reading may not have correct Icon
 
 ## Sources
 
